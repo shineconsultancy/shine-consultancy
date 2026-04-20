@@ -24,8 +24,8 @@ html{scroll-behavior:smooth}
 body{background:var(--white);color:var(--black);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:28px 64px;transition:all 0.5s}
-nav.scrolled{background:rgba(255,255,255,0.97);padding:18px 64px;backdrop-filter:blur(20px);border-bottom:1px solid var(–border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 64px;transition:all 0.5s}
+nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter:blur(20px);border-bottom:1px solid var(–border)}
 .nav-links{display:flex;gap:48px;list-style:none}
 .nav-links a{font-size:9px;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:var(–grey);text-decoration:none;transition:color 0.3s;position:relative}
 .nav-links a::after{content:’’;position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(–gold);transition:width 0.35s}
@@ -65,18 +65,23 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:18px 64px;backdrop-filter
 .diamond-svg{width:72px;height:72px;animation:diamondGlow 4s ease-in-out 1s infinite}
 @keyframes diamondGlow{0%,100%{filter:drop-shadow(0 0 8px rgba(200,160,74,0.5))}50%{filter:drop-shadow(0 0 28px rgba(200,160,74,0.9))}}
 
-.hero-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(100px,16vw,180px);font-weight:300;letter-spacing:24px;color:var(–black);line-height:0.85;margin-bottom:16px;animation:fadeUp 1.1s ease 0.35s both}
+.hero-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(56px,12vw,180px);font-weight:300;letter-spacing:clamp(8px,3vw,24px);color:var(–black);line-height:0.85;margin-bottom:16px;animation:fadeUp 1.1s ease 0.35s both}
 .hero-sub{font-family:‘Cormorant Garamond’,serif;font-size:clamp(13px,1.5vw,17px);font-weight:300;font-style:italic;letter-spacing:5px;color:var(–gold);margin-bottom:48px;animation:fadeUp 1s ease 0.5s both}
-.hero-tagline-main{font-family:‘Cormorant Garamond’,serif;font-size:clamp(40px,6vw,80px);font-weight:300;font-style:italic;color:var(–gold);line-height:1.2;margin-bottom:16px;animation:fadeUp 1.2s ease 0.65s both;text-shadow:0 0 60px rgba(200,160,74,0.15)}
-.hero-tagline-sub{font-family:‘Cormorant Garamond’,serif;font-size:clamp(26px,3.5vw,48px);font-weight:300;color:rgba(13,13,13,0.65);line-height:1.4;margin-bottom:64px}
+.hero-tagline-main{font-family:‘Cormorant Garamond’,serif;font-size:clamp(26px,5vw,80px);font-weight:300;font-style:italic;color:var(–gold);line-height:1.2;margin-bottom:16px;animation:fadeUp 1.2s ease 0.65s both;text-shadow:0 0 60px rgba(200,160,74,0.15)}
+.hero-tagline-sub{font-family:‘Cormorant Garamond’,serif;font-size:clamp(18px,3vw,48px);font-weight:300;color:rgba(13,13,13,0.65);line-height:1.4;margin-bottom:48px}
 .hero-tagline-sub .word{display:inline-block;opacity:0;animation:fadeUp 0.7s ease forwards}
 .hero-tagline-sub em{color:var(–gold);font-style:normal}
 
 .hero-cta{display:flex;gap:20px;animation:fadeUp 1s ease 0.95s both}
-.btn-black{padding:17px 56px;background:var(–black);color:var(–white);font-family:‘Montserrat’,sans-serif;font-size:9px;font-weight:500;letter-spacing:4px;text-transform:uppercase;text-decoration:none;border:1px solid var(–black);transition:all 0.4s}
-.btn-black:hover{background:transparent;color:var(–black)}
-.btn-gold-out{padding:17px 56px;background:transparent;color:var(–gold);font-family:‘Montserrat’,sans-serif;font-size:9px;font-weight:300;letter-spacing:4px;text-transform:uppercase;text-decoration:none;border:1px solid var(–gold);transition:all 0.4s}
-.btn-gold-out:hover{background:var(–gold);color:var(–white)}
+.btn-black{padding:17px 56px;background:var(–black);color:var(–white) !important;font-family:‘Montserrat’,sans-serif;font-size:9px;font-weight:500;letter-spacing:4px;text-transform:uppercase;text-decoration:none !important;border:1px solid var(–black);transition:all 0.4s;display:inline-block;cursor:pointer}
+.btn-black:hover{background:transparent;color:var(–black) !important}
+.btn-gold-out{padding:17px 56px;background:transparent;color:var(–gold) !important;font-family:‘Montserrat’,sans-serif;font-size:9px;font-weight:300;letter-spacing:4px;text-transform:uppercase;text-decoration:none !important;border:1px solid var(–gold);transition:all 0.4s;display:inline-block;cursor:pointer}
+.btn-gold-out:hover{background:var(–gold);color:var(–white) !important}
+.svc-link{font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(–gold) !important;text-decoration:none !important;opacity:0.6;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s}
+.svc-link:hover{opacity:1;gap:18px}
+.contact-alt a{color:var(–gold) !important;text-decoration:none !important}
+.footer-right a{color:var(–gold) !important;text-decoration:none !important}
+a{color:inherit}
 
 .scroll-hint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:12px;animation:fadeUp 1s ease 1.2s both}
 .scroll-bar{width:1px;height:56px;background:linear-gradient(to bottom,var(–gold),transparent);animation:scrollPulse 2.5s ease-in-out infinite}
@@ -297,7 +302,7 @@ footer{grid-template-columns:1fr;text-align:center;padding:40px 24px}
       </svg>
     </div>
     <h1 class="hero-title">SHINE</h1>
-    <p class="hero-sub">Stage Confidence&reg; &mdash; by Monica Semedo</p>
+    <p class="hero-sub">SHINE Stage Confidence&reg; &mdash; by Monica Semedo</p>
     <p class="hero-tagline-main">Let your presence shine.</p>
     <p class="hero-tagline-sub" id="taglineSub">Be yourself. Stronger. More impactful.</p>
     <div class="hero-cta">
@@ -335,8 +340,8 @@ footer{grid-template-columns:1fr;text-align:center;padding:40px 24px}
     <div class="eyebrow reveal">The person behind SHINE</div>
     <h2 class="about-title reveal">Monica<br><em>Semedo</em></h2>
     <p class="about-lead reveal">I have been catching audiences since before I could explain how &mdash; and I have spent a lifetime refining that instinct into something I can now give to others.</p>
-    <p class="about-body reveal">For 22 years the face of RTL T&eacute;l&eacute; L&euml;tzebuerg. Master of Ceremonies at the Olympic Games of the Small States of Europe, Ironman 70.3, Philharmonie Luxembourg. Member of the European Parliament 2019&ndash;2024. Speaker at the FRA Forum Vienna and Reykjavik Global Forum. Featured on CNN, BBC and Euronews.</p>
-    <p class="about-body reveal"><strong>Through all of it, I learned something no course teaches: how to hold a room not by being louder &mdash; but by being fully, authentically present.</strong></p>
+    <p class="about-body reveal">For 22 years the face of RTL T&eacute;l&eacute; L&euml;tzebuerg &mdash; starting at age 11, anchoring news, hosting shows, presenting live events. Master of Ceremonies at the Olympic Games of the Small States of Europe, Ironman 70.3, Philharmonie Luxembourg and major corporate events. Member of the European Parliament 2019&ndash;2024, where I chaired sessions, spoke in plenary and represented Luxembourg on the international stage. Speaker at the FRA Forum Vienna, Reykjavik Global Forum and UN pre-Summit Geneva. Featured on CNN, BBC and Euronews.</p>
+    <p class="about-body reveal"><strong>Through all of it, I learned something no course teaches: how to hold a room not by being louder &mdash; but by being fully, authentically present. That is what I now teach through SHINE Stage Confidence&reg;.</strong></p>
     <div class="timeline reveal">
       <div class="tl"><span class="tl-y">Since 4</span><div class="tl-t"><strong>Singer &amp; Performer &middot; Luxembourg stages</strong>First album 1992 &middot; First number one 1995</div></div>
       <div class="tl"><span class="tl-y">1995&ndash;2018</span><div class="tl-t"><strong>TV Journalist &amp; Presenter &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</strong>Started at age 11 &middot; 22 years as anchor</div></div>
@@ -368,7 +373,7 @@ footer{grid-template-columns:1fr;text-align:center;padding:40px 24px}
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal">
-        <img class="svc-photo" src="https://shineconsultancy.github.io/shine-consultancy/Portait.jpg.PNG" alt="Executive Mentoring">
+        <img class="svc-photo" src="https://shineconsultancy.github.io/shine-consultancy/EP.jpg.JPG" alt="Executive Mentoring">
         <div class="svc-body">
           <div class="svc-n">01</div>
           <div class="svc-name">Executive Mentoring</div>
