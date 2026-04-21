@@ -433,6 +433,19 @@ text-decoration: none !important;
 color: #c8a04a !important;
 text-decoration: none !important;
 }
+
+/* ── BLUR REVEAL for pathway taglines ── */
+@keyframes blurReveal {
+0% { filter: blur(12px); opacity: 0; letter-spacing: 8px; }
+100% { filter: blur(0); opacity: 1; letter-spacing: 2px; }
+}
+.pw-tagline-reveal {
+opacity: 0;
+animation: blurReveal 1.2s ease forwards;
+}
+.pw-card:nth-child(1) .pw-tagline-reveal { animation-delay: 0.1s; }
+.pw-card:nth-child(2) .pw-tagline-reveal { animation-delay: 0.4s; }
+.pw-card:nth-child(3) .pw-tagline-reveal { animation-delay: 0.7s; }
 </style>
 
 </head>
@@ -662,54 +675,56 @@ text-decoration: none !important;
   <div class="pw-inner">
     <div class="reveal">
       <div class="eyebrow">Individual Mentoring</div>
-      <h2 class="sec-title">Your Mentoring<br><em>Journey.</em></h2>
-      <p style="font-size:14px;font-weight:300;line-height:2;color:var(--grey);margin-top:20px;max-width:640px;">Every pathway begins with a Strategic Diagnosis Session. From there, we build around your real upcoming communication moments &mdash; not a generic programme.</p>
+      <h2 class="sec-title" style="font-size:clamp(52px,7vw,100px);margin-bottom:8px;">The Floor Is <em>Yours.</em></h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.8vw,22px);font-weight:300;font-style:italic;color:var(--gold);margin-bottom:20px;letter-spacing:1px;">Be yourself. Find your voice. Own the stage. On camera.</p>
+      <p style="font-size:14px;font-weight:300;line-height:2;color:var(--grey);max-width:640px;">Every pathway begins with a Strategic Diagnosis Session. From there, we build around your real upcoming communication moments &mdash; not a generic programme.</p>
     </div>
     <div class="pw-grid">
       <div class="pw-card reveal">
-        <span class="pw-sessions">4 Sessions</span>
-        <div class="pw-name">Clear Leadership</div>
-        <span class="pw-sub">Strategic Clarity &middot; Executive Communication</span>
-        <p class="pw-desc">For leaders who need to express complex ideas with clarity and confidence in decisive moments.</p>
+        <span class="pw-sessions">5 Sessions</span>
+        <div class="pw-name">Find Your Voice</div>
+        <span class="pw-sub" style="color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;">Be yourself &mdash; find your voice.</span>
+        <p class="pw-desc">For any professional who speaks to an audience and wants their message to land with clarity, confidence and authenticity.</p>
         <ul class="pw-list">
-          <li>Session 1 &mdash; Strategic Diagnosis &amp; Baseline</li>
-          <li>Session 2 &mdash; Core Message Architecture</li>
-          <li>Session 3 &mdash; Real-Time Communication &amp; Q&amp;A</li>
-          <li>Session 4 &mdash; Executive Simulation &amp; Final Polish</li>
+          <li>Session 1 &mdash; Diagnostic &amp; Baseline</li>
+          <li>Session 2 &mdash; Body, Posture &amp; Physical Presence</li>
+          <li>Session 3 &mdash; Message, Structure &amp; Written vs. Spoken Word</li>
+          <li>Session 4 &mdash; Voice, Intonation &amp; Delivery</li>
+          <li>Session 5 &mdash; Executive Simulation &amp; Final Polish</li>
         </ul>
-        <p class="pw-for">Ideal for: Board meetings &middot; Investor conversations &middot; Strategy briefings</p>
+        <p class="pw-for">Ideal for: Any professional context with an audience &middot; Speeches &middot; Panels &middot; Presentations &middot; Public appearances</p>
       </div>
       <div class="pw-card reveal">
         <span class="pw-sessions">6 Sessions</span>
-        <div class="pw-name">Visible Presence</div>
-        <span class="pw-sub">Authentic Presence &middot; Stage &amp; Audience</span>
-        <p class="pw-desc">To strengthen your natural presence and engage an audience with authenticity and confidence.</p>
+        <div class="pw-name">Own the Stage</div>
+        <span class="pw-sub" style="color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;">Be yourself &mdash; own the stage.</span>
+        <p class="pw-desc">For professionals facing a larger audience, a real stage or a major event &mdash; where the stakes are higher and the opportunity to shine is greater.</p>
         <ul class="pw-list">
-          <li>Session 1 &mdash; Diagnosis &amp; Context Mapping</li>
-          <li>Session 2 &mdash; Narrative &amp; Speech Design</li>
-          <li>Session 3 &mdash; Presence &amp; Grounding</li>
-          <li>Session 4 &mdash; Voice &amp; Expression</li>
-          <li>Session 5 &mdash; Audience Connection &amp; Q&amp;A</li>
-          <li>Session 6 &mdash; Full Performance Rehearsal</li>
+          <li>Session 1 &mdash; Diagnostic &amp; Baseline</li>
+          <li>Session 2 &mdash; Body, Posture &amp; Physical Presence</li>
+          <li>Session 3 &mdash; Message, Structure &amp; Written vs. Spoken Word</li>
+          <li>Session 4 &mdash; Voice, Intonation &amp; Delivery</li>
+          <li>Session 5 &mdash; The Stage: Collaboration &amp; The Stage Walk</li>
+          <li>Session 6 &mdash; Full Stage Simulation &amp; Final Polish</li>
         </ul>
-        <p class="pw-for">Ideal for: Keynotes &middot; Conferences &middot; Town halls &middot; Panels</p>
+        <p class="pw-for">Ideal for: Keynotes &middot; Conferences &middot; Town halls &middot; Major events &middot; MC &amp; moderation</p>
       </div>
       <div class="pw-card reveal">
         <span class="pw-sessions">8 Sessions</span>
-        <div class="pw-name">Confident Visibility</div>
-        <span class="pw-sub">Performance Intelligence &middot; Media &amp; Camera</span>
-        <p class="pw-desc">For visible, high-exposure communication with clarity, calm and authenticity under scrutiny.</p>
+        <div class="pw-name">Camera On</div>
+        <span class="pw-sub" style="color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;">Be yourself &mdash; on camera.</span>
+        <p class="pw-desc">For professionals who need to shine on screen &mdash; naturally, credibly and with the confidence of someone who knows exactly how the camera works.</p>
         <ul class="pw-list">
-          <li>Session 1 &mdash; Strategic Visibility Diagnosis</li>
-          <li>Session 2 &mdash; Core Message Framing</li>
-          <li>Session 3 &mdash; On-Camera Foundations</li>
-          <li>Session 4 &mdash; Interview Structure</li>
-          <li>Session 5 &mdash; Complex Question Handling</li>
-          <li>Session 6 &mdash; Pressure Simulation</li>
-          <li>Session 7 &mdash; Recording &amp; Playback Refinement</li>
-          <li>Session 8 &mdash; Final Integration</li>
+          <li>Session 1 &mdash; Diagnostic &amp; Baseline</li>
+          <li>Session 2 &mdash; Body, Posture &amp; Physical Presence</li>
+          <li>Session 3 &mdash; Message, Structure &amp; Written vs. Spoken Word</li>
+          <li>Session 4 &mdash; Voice, Intonation &amp; Delivery</li>
+          <li>Session 5 &mdash; Camera Foundations: Fear, Comfort &amp; First Takes</li>
+          <li>Session 6 &mdash; Technical Layer: Eyes, Hands &amp; Background</li>
+          <li>Session 7 &mdash; Text for Camera, Teleprompter &amp; Listening</li>
+          <li>Session 8 &mdash; Full Simulation: Interview, Moderation &amp; Outdoor</li>
         </ul>
-        <p class="pw-for">Ideal for: Media interviews &middot; Corporate videos &middot; Public announcements</p>
+        <p class="pw-for">Ideal for: TV &amp; media interviews &middot; LinkedIn video &middot; Corporate communications &middot; Zoom &middot; Live broadcast</p>
       </div>
     </div>
   </div>
@@ -779,10 +794,10 @@ text-decoration: none !important;
       <p class="fw-lead">Professionals who already have something important to say &mdash; and want to make sure it <em>lands the way it deserves to.</em></p>
       <p class="fw-note">Luxembourg&rsquo;s multicultural reality means your audience may shift languages mid-room, mid-panel, mid-meeting. SHINE is built for exactly that environment.</p>
       <div class="aud-list">
-        <div class="aud-item"><div class="aud-t">Executives &amp; Senior Leaders</div><div class="aud-d">Board presentations, investor conversations, media visibility, strategic announcements.</div></div>
-        <div class="aud-item"><div class="aud-t">Public-Facing Professionals</div><div class="aud-d">Spokespersons, advocates, moderators, panel speakers, consultants, civil servants.</div></div>
-        <div class="aud-item"><div class="aud-t">Teams &amp; Organisations</div><div class="aud-d">Group workshops tailored to your industry and real communication challenges.</div></div>
-        <div class="aud-item"><div class="aud-t">Institutions &amp; European Bodies</div><div class="aud-d">Plenary interventions, panel appearances, press conferences, institutional communication.</div></div>
+        <div class="aud-item"><div class="aud-t">Anyone who speaks publicly</div><div class="aud-d">Executives, politicians, women in leadership, civil servants, moderators, spokespersons. Beginners and experienced speakers alike. SHINE meets you where you are.</div></div>
+        <div class="aud-item"><div class="aud-t">The professional who wants impact</div><div class="aud-d">Who wants their message to not just be heard &mdash; but to land, to stay, to move people. Whatever your field, whatever your stage.</div></div>
+        <div class="aud-item"><div class="aud-t">Anyone with an important moment ahead</div><div class="aud-d">A keynote, a panel, a press conference, an interview, a big presentation. SHINE gets you ready &mdash; fully, specifically, authentically.</div></div>
+        <div class="aud-item"><div class="aud-t">The face of a brand, institution or cause</div><div class="aud-d">Who needs to own the camera as naturally as they own the room. Because on screen, everything shows &mdash; and SHINE makes sure what shows is the best of you.</div></div>
       </div>
     </div>
   </div>
@@ -817,9 +832,9 @@ text-decoration: none !important;
         <label class="form-label">I am interested in</label>
         <select>
           <option value="">Select a service</option>
-          <option>Executive Mentoring &mdash; Clear Leadership (4 sessions)</option>
-          <option>Executive Mentoring &mdash; Visible Presence (6 sessions)</option>
-          <option>Executive Mentoring &mdash; Confident Visibility (8 sessions)</option>
+          <option>Mentoring &mdash; Find Your Voice (5 sessions)</option>
+          <option>Mentoring &mdash; Own the Stage (6 sessions)</option>
+          <option>Mentoring &mdash; Camera On (8 sessions)</option>
           <option>Group Workshop &mdash; Lead with Clarity</option>
           <option>Group Workshop &mdash; Engage the Room</option>
           <option>Group Workshop &mdash; Confident Visibility</option>
