@@ -215,7 +215,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .svc-list li::before{content:’—’;color:var(–gold);flex-shrink:0}
 
 /* ON-CAMERA — standalone highlight section */
-.camera-section{padding:100px 80px;background:var(–black);position:relative;overflow:hidden}
+.camera-section{padding:60px 80px;background:var(–black);position:relative;overflow:hidden}
 .camera-section::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 60% 50%,rgba(200,160,74,0.08) 0%,transparent 70%);pointer-events:none}
 .camera-inner{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .camera-img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block}
@@ -291,7 +291,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .contact-body{font-size:15px;font-weight:300;line-height:2;color:var(–grey);margin-bottom:52px}
 .form{display:flex;flex-direction:column;gap:16px;text-align:left;margin-bottom:40px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.form input,.form textarea,.form select{width:100%;padding:16px 20px;border:1px solid var(–border);background:var(–white);font-family:‘Montserrat’,sans-serif;font-size:12px;font-weight:300;color:var(–black);outline:none;transition:border-color 0.3s;-webkit-appearance:none;border-radius:0}
+.form input,.form textarea,.form select{width:100%;padding:16px 20px;border:1px solid var(–border);background:var(–white) !important;background-color:var(–white) !important;font-family:‘Montserrat’,sans-serif;font-size:12px;font-weight:300;color:var(–black) !important;outline:none;transition:border-color 0.3s;-webkit-appearance:none !important;appearance:none !important;border-radius:0 !important;-webkit-border-radius:0 !important}
 .form input:focus,.form textarea:focus,.form select:focus{border-color:var(–gold)}
 .form textarea{height:140px;resize:vertical}
 .form select{color:var(–grey)}
@@ -330,7 +330,7 @@ nav.scrolled{padding:14px 24px}
 .phi-q::before{display:none}
 .services{padding:72px 24px}
 .svc-grid{grid-template-columns:1fr}
-.camera-section{padding:72px 24px}
+.camera-section{padding:40px 24px}
 .camera-inner{grid-template-columns:1fr;gap:40px}
 .pathways{padding:72px 24px}
 .pw-grid{grid-template-columns:1fr}
@@ -434,20 +434,29 @@ color: #c8a04a !important;
 text-decoration: none !important;
 }
 
-/* ── BLUR REVEAL for pathway taglines ── */
-@keyframes blurReveal {
-0% { filter: blur(12px); opacity: 0; letter-spacing: 8px; }
+/* ── BLUR REVEAL ── */
+
+100% { filter: blur(0px);  opacity: 1; }
+}
+
 100% { filter: blur(0); opacity: 1; letter-spacing: 2px; }
 }
-.pw-tagline-reveal {
-opacity: 0;
-animation: blurReveal 1.2s ease forwards;
-}
-.pw-card:nth-child(1) .pw-tagline-reveal { animation-delay: 0.1s; }
-.pw-card:nth-child(2) .pw-tagline-reveal { animation-delay: 0.4s; }
-.pw-card:nth-child(3) .pw-tagline-reveal { animation-delay: 0.7s; }
-</style>
 
+.pw-card:nth-child(1)
+.pw-card:nth-child(2)
+.pw-card:nth-child(3)
+
+/* Blur reveal animation */
+@keyframes blurReveal {
+0%   { filter: blur(10px); opacity: 0; transform: translateY(4px); }
+100% { filter: blur(0px);  opacity: 1; transform: translateY(0); }
+}
+.blur-reveal {
+animation: blurReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards;
+opacity: 0;
+}
+
+</style>
 </head>
 <body>
 
@@ -675,15 +684,17 @@ animation: blurReveal 1.2s ease forwards;
   <div class="pw-inner">
     <div class="reveal">
       <div class="eyebrow">Individual Mentoring</div>
-      <h2 class="sec-title" style="font-size:clamp(52px,7vw,100px);margin-bottom:8px;">The Floor Is <em>Yours.</em></h2>
+      <h2 class="sec-title" style="font-size:clamp(52px,7vw,100px);margin-bottom:8px;">The Floor Is <em style="color:var(--gold);font-style:italic;">Yours.</em></h2>
       <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.8vw,22px);font-weight:300;font-style:italic;color:var(--gold);margin-bottom:20px;letter-spacing:1px;">Be yourself. Find your voice. Own the stage. On camera.</p>
       <p style="font-size:14px;font-weight:300;line-height:2;color:var(--grey);max-width:640px;">Every pathway begins with a Strategic Diagnosis Session. From there, we build around your real upcoming communication moments &mdash; not a generic programme.</p>
     </div>
     <div class="pw-grid">
       <div class="pw-card reveal">
         <span class="pw-sessions">5 Sessions</span>
-        <div class="pw-name">Find Your Voice</div>
-        <span class="pw-sub" style="color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;">Be yourself &mdash; find your voice.</span>
+        <div style="margin-bottom:20px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--black);display:block;margin-bottom:4px;">Be yourself.</span>
+          <span class="pw-name-gold blur-reveal" style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--gold);display:block;">Find Your Voice</span>
+        </div>
         <p class="pw-desc">For any professional who speaks to an audience and wants their message to land with clarity, confidence and authenticity.</p>
         <ul class="pw-list">
           <li>Session 1 &mdash; Diagnostic &amp; Baseline</li>
@@ -696,8 +707,10 @@ animation: blurReveal 1.2s ease forwards;
       </div>
       <div class="pw-card reveal">
         <span class="pw-sessions">6 Sessions</span>
-        <div class="pw-name">Own the Stage</div>
-        <span class="pw-sub" style="color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;">Be yourself &mdash; own the stage.</span>
+        <div style="margin-bottom:20px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--black);display:block;margin-bottom:4px;">Be yourself.</span>
+          <span class="pw-name-gold blur-reveal" style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--gold);display:block;animation-delay:0.3s;">Own the Stage</span>
+        </div>
         <p class="pw-desc">For professionals facing a larger audience, a real stage or a major event &mdash; where the stakes are higher and the opportunity to shine is greater.</p>
         <ul class="pw-list">
           <li>Session 1 &mdash; Diagnostic &amp; Baseline</li>
@@ -711,8 +724,10 @@ animation: blurReveal 1.2s ease forwards;
       </div>
       <div class="pw-card reveal">
         <span class="pw-sessions">8 Sessions</span>
-        <div class="pw-name">Camera On</div>
-        <span class="pw-sub" style="color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:2px;">Be yourself &mdash; on camera.</span>
+        <div style="margin-bottom:20px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--black);display:block;margin-bottom:4px;">Be yourself.</span>
+          <span class="pw-name-gold blur-reveal" style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--gold);display:block;animation-delay:0.6s;">Camera On</span>
+        </div>
         <p class="pw-desc">For professionals who need to shine on screen &mdash; naturally, credibly and with the confidence of someone who knows exactly how the camera works.</p>
         <ul class="pw-list">
           <li>Session 1 &mdash; Diagnostic &amp; Baseline</li>
@@ -845,7 +860,7 @@ animation: blurReveal 1.2s ease forwards;
       <div><label class="form-label">Message</label><textarea placeholder="Tell me about your communication goals or an upcoming moment you want to prepare for..."></textarea></div>
       <button type="submit" class="btn-submit">Send Message</button>
     </form>
-    <p class="contact-alt">Or reach me directly: <a href="mailto:hello@shine-consultancy.lu">hello@shine-consultancy.lu</a> &middot; <a href="tel:+352621410092">+352 621 41 00 92</a></p>
+    <p class="contact-alt">Or reach me directly: <a href="mailto:hello@shine-consultancy.lu">hello@shine-consultancy.lu</a> &middot; <a href="tel:+352621410092" style="white-space:nowrap;">+352&nbsp;621&nbsp;41&nbsp;00&nbsp;92</a></p>
   </div>
 </section>
 
@@ -856,7 +871,7 @@ animation: blurReveal 1.2s ease forwards;
   <div class="footer-mid">&copy; 2026 SHINE Stage Confidence&reg;<br>Autorisation d&rsquo;&eacute;tablissement N&deg; 10190241/0 &middot; Luxembourg</div>
   <div class="footer-right">
     <a href="mailto:hello@shine-consultancy.lu">hello@shine-consultancy.lu</a><br>
-    <a href="tel:+352621410092">+352 621 41 00 92</a><br>
+    <a href="tel:+352621410092" style="white-space:nowrap;">+352&nbsp;621&nbsp;41&nbsp;00&nbsp;92</a><br>
     The Office Suits &middot; 33 Bd Prince Henri &middot; L-1724 Luxembourg
   </div>
 </footer>
