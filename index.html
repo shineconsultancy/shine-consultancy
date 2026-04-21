@@ -248,7 +248,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .pw-for{margin-top:24px;padding-top:20px;border-top:1px solid var(–border);font-size:11px;font-weight:300;color:var(–grey);font-style:italic}
 
 /* WORKSHOP FORMATS */
-.workshops{padding:130px 80px;background:var(–white)}
+.workshops{padding:130px 80px;background:var(–cream)}
 .ws-inner{max-width:1500px;margin:0 auto}
 .ws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(–border);margin-top:60px}
 .ws-card{background:var(–cream);padding:52px 44px;border-top:3px solid var(–gold)}
@@ -262,7 +262,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .ws-list li::before{content:’—’;color:var(–gold);flex-shrink:0}
 
 /* FOR WHO */
-.for-who{padding:130px 80px;background:var(–cream)}
+.for-who{padding:130px 80px;background:var(–white)}
 .fw-inner{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .fw-img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center}
 .fw-content{padding:20px 0}
@@ -334,7 +334,7 @@ nav.scrolled{padding:14px 24px}
 .camera-inner{grid-template-columns:1fr;gap:40px}
 .pathways{padding:72px 24px}
 .pw-grid{grid-template-columns:1fr}
-.workshops{padding:72px 24px}
+.workshops{padding:72px 24px;background:var(–cream)}
 .ws-grid{grid-template-columns:1fr}
 .for-who{padding:72px 24px}
 .fw-inner{grid-template-columns:1fr;gap:36px}
@@ -454,6 +454,19 @@ text-decoration: none !important;
 .blur-reveal {
 animation: blurReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards;
 opacity: 0;
+}
+
+select, select:focus, select:active {
+-webkit-appearance: none !important;
+appearance: none !important;
+background-color: #ffffff !important;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘12’ height=‘8’ viewBox=‘0 0 12 8’%3E%3Cpath d=‘M1 1l5 5 5-5’ stroke=’%23c8a04a’ stroke-width=‘1.5’ fill=‘none’/%3E%3C/svg%3E”) !important;
+background-repeat: no-repeat !important;
+background-position: right 16px center !important;
+padding-right: 40px !important;
+border-radius: 0 !important;
+border: 1px solid rgba(200,160,74,0.2) !important;
+color: #0d0d0d !important;
 }
 
 </style>
@@ -659,8 +672,9 @@ opacity: 0;
     </div>
     <div class="camera-content" style="opacity:1;transform:none;">
       <div class="camera-eyebrow">A Unique Expertise</div>
-      <h2 class="camera-title">On-Camera<br><em>Presence</em></h2>
-      <span class="camera-uvp">22 years of live television &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span>
+      <h2 class="camera-title">Be yourself.<br><em>On camera.</em></h2>
+      <span class="camera-uvp" style="display:block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Camera On &mdash; 8-session pathway</span>
+      <span style="display:block;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:24px;">22 years of live television &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span>
       <p class="camera-lead">Camera amplifies everything &mdash; tension, habits, and authenticity in equal measure. Most communication coaches have never faced a live camera professionally. Monica has done it for over two decades.</p>
       <p style="font-size:13px;font-weight:300;line-height:2;color:rgba(255,255,255,0.6);margin-bottom:28px;">From live news bulletins and entertainment shows to parliamentary sessions and international summits &mdash; Monica knows what it means to perform under pressure, in real time, with no second take. That lived experience is what she now brings to every client.</p>
       <ul class="camera-list">
@@ -906,6 +920,15 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach((e,i) => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
 }, {threshold:0.04});
 reveals.forEach(el => obs.observe(el));
+// Blur reveal observer
+const blurEls = document.querySelectorAll('.blur-reveal');
+const blurObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){e.target.style.animationPlayState='running';blurObs.unobserve(e.target);}
+  });
+},{threshold:0.15});
+blurEls.forEach(el=>{el.style.animationPlayState='paused';blurObs.observe(el);});
+
 function handleSubmit(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.btn-submit');
