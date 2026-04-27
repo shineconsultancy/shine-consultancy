@@ -475,7 +475,6 @@ color: #0d0d0d !important;
 [data-lang]{transition:opacity 0.3s;}
 
 /* ── SHINE HEARTBEAT ANIMATION ── */
-.hero-title{position:relative;display:inline-block;font-family:‘Cormorant Garamond’,serif;font-size:clamp(72px,14vw,200px);font-weight:300;letter-spacing:clamp(8px,3vw,24px);color:var(–black);line-height:0.85;margin-bottom:16px;position:relative;display:inline-block;animation:shineAppear 2s cubic-bezier(0.22,1,0.36,1) 0.3s both;;overflow:visible;;}
 
 40%{opacity:1;filter:blur(0px);transform:scale(1.03);}
 55%{transform:scale(0.99);}
@@ -492,7 +491,7 @@ color: #0d0d0d !important;
 @keyframes sparkle2{0%{opacity:0;transform:scale(0) translateY(0);}30%{opacity:1;transform:scale(1.2) translateY(-12px);}50%{opacity:0.8;transform:scale(1) translateY(-16px);}100%{opacity:0;transform:scale(0) translateY(-20px);}}40%{opacity:1;transform:scale(1.2) translateY(-10px);}60%{opacity:0.8;transform:scale(1) translateY(-14px);}}40%,60%{opacity:0.8;transform:translateY(-8px) scale(1);}}
 
 /* ── SHINE LETTER BY LETTER ── */
-.hero-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(72px,14vw,200px);font-weight:300;letter-spacing:clamp(8px,3vw,24px);color:var(–black);line-height:0.85;margin-bottom:16px;position:relative;display:inline-block;}
+
 .shine-letter{display:inline-block;opacity:0;filter:blur(24px);animation:letterReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards;}
 @keyframes letterReveal{
 0%{opacity:0;filter:blur(24px);transform:translateY(8px) scale(0.95);}
@@ -603,10 +602,9 @@ transform:translateY(0);
 60%{transform:scale(0.998);}
 100%{transform:scale(1);}
 }
-.hero-title{animation:shinePulse 2.8s ease-in-out 2.2s 1;}
 
 /* SHINE shimmer — thin gold sweep */
-.hero-title{position:relative;overflow:visible;}
+
 .hero-title::before{
 content:’’;
 position:absolute;
@@ -632,7 +630,21 @@ z-index:2;
 52%,100%{left:120%;opacity:0;}
 }
 
+.hero-title{
+font-family:‘Cormorant Garamond’,serif;
+font-size:clamp(72px,14vw,200px);
+font-weight:300;
+letter-spacing:clamp(8px,3vw,24px);
+color:var(–black);
+line-height:0.85;
+margin-bottom:16px;
+position:relative;
+display:inline-block;
+overflow:visible;
+animation:shinePulse 2.8s ease-in-out 2.2s 1;
+}
 </style>
+
 </head>
 <body>
 
@@ -958,8 +970,11 @@ z-index:2;
 <!-- FOR WHO -->
 
 <section class="for-who">
-  <div class="fw-inner" style="grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;">
-    <div class="reveal" style="position:sticky;top:120px;">
+  <div class="fw-inner">
+    <div class="reveal">
+      <img class="fw-img" src="https://shineconsultancy.github.io/shine-consultancy/Stage.jpg.JPG" alt="Monica Semedo on stage">
+    </div>
+    <div class="fw-content reveal">
       <div class="eyebrow" data-i18n="fw-eyebrow">Who This Is For</div>
       <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(52px,5vw,80px);font-weight:600;color:var(--black);line-height:1.05;margin-bottom:0;">Who Is <em style="color:var(--gold);font-style:italic;">SHINE</em><br>For</h2>
     </div>
@@ -1214,8 +1229,13 @@ function setLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(function(el) {
     var key = el.getAttribute('data-i18n');
     if (!t[key]) return;
-    // Never use innerHTML — only textContent to preserve child elements and animations
-    el.textContent = t[key];
+    // Use innerHTML for tl items, textContent for everything else
+    if (key.indexOf('tl-') === 0 && key.indexOf('tl-y') === -1) {
+      el.innerHTML = t[key];
+    } else {
+      // Never use innerHTML — only textContent to preserve animations
+      el.textContent = t[key];
+    }
   });
 
   // Special: hero-sub needs gold span preserved
@@ -1249,6 +1269,12 @@ function setLang(lang) {
   for (var j = 1; j <= 3; j++) {
     var svcEl = document.querySelector('[data-i18n="svc-card-' + j + '"]');
     if (svcEl && t['svc-card-' + j]) svcEl.textContent = t['svc-card-' + j];
+  }
+
+  // Tagline sub with gold span
+  var taglineSubEl = document.getElementById('taglineSub');
+  if (taglineSubEl && t['hero-sub-plain'] && t['hero-sub-gold']) {
+    taglineSubEl.innerHTML = t['hero-sub-plain'] + '<span class="gold-strong">' + t['hero-sub-gold'] + '</span>';
   }
 
   // Services title — needs innerHTML for <br> and <em>
