@@ -586,11 +586,42 @@ transform:translateY(0);
 
 .gold-strong{color:var(–gold);}
 
-.hero-sparkles{position:relative;height:0;width:100%;overflow:visible;}
-.hero-sparkles .sp1{position:absolute;color:#c8a04a;font-size:20px;top:-80px;left:calc(50% - 120px);animation:spk1 4s ease-in-out 2.5s infinite;opacity:0;}
-.hero-sparkles .sp2{position:absolute;color:#e8c96a;font-size:13px;top:-60px;right:calc(50% - 140px);animation:spk2 4s ease-in-out 3.5s infinite;opacity:0;}
-@keyframes spk1{0%,100%{opacity:0;transform:scale(0);}40%{opacity:1;transform:translateY(-16px) scale(1.2);}70%{opacity:0.6;transform:translateY(-22px) scale(1);}}
-@keyframes spk2{0%,100%{opacity:0;transform:scale(0);}40%{opacity:1;transform:translateY(-14px) scale(1.2);}70%{opacity:0.6;transform:translateY(-20px) scale(1);}}
+40%{opacity:1;transform:translateY(-16px) scale(1.2);}70%{opacity:0.6;transform:translateY(-22px) scale(1);}}
+40%{opacity:1;transform:translateY(-14px) scale(1.2);}70%{opacity:0.6;transform:translateY(-20px) scale(1);}}
+
+/* Hero SHINE shimmer */
+.hero-shimmer-wrap{
+position:relative;
+height:0;
+width:100%;
+overflow:visible;
+pointer-events:none;
+}
+.hero-shimmer-wrap::after{
+content:’’;
+position:absolute;
+top:-120px;
+left:-20%;
+width:12%;
+height:140px;
+background:linear-gradient(
+105deg,
+transparent 0%,
+rgba(200,160,74,0.08) 30%,
+rgba(255,248,210,0.55) 50%,
+rgba(200,160,74,0.08) 70%,
+transparent 100%
+);
+transform:skewX(-20deg);
+animation:heroShimmer 7s ease-in-out 3s infinite;
+opacity:0;
+}
+@keyframes heroShimmer{
+0%{left:-20%;opacity:0;}
+5%{opacity:1;}
+45%{left:120%;opacity:1;}
+50%,100%{left:120%;opacity:0;}
+}
 
 </style>
 </head>
@@ -677,7 +708,7 @@ transform:translateY(0);
       </svg>
     </div>
     <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.2s">S</span><span class="shine-letter" style="animation-delay:0.5s">H</span><span class="shine-letter" style="animation-delay:0.8s">I</span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.4s">E</span><span class="hero-title-sparkle"></span></h1>
-    <div class="hero-sparkles" aria-hidden="true"><span class="sp1">&#10022;</span><span class="sp2">&#10022;</span></div>
+    <div class="hero-shimmer-wrap" aria-hidden="true"></div>
     <p class="hero-sub">SHINE Stage Confidence&reg;<br>by Monica Semedo</p>
     <p class="hero-tagline-main" data-i18n="hero-tagline" data-en="Let your presence shine." data-fr="Laissez votre présence briller." data-de="Lassen Sie Ihre Präsenz strahlen." data-pt="Deixe a sua presença brilhar.">Let your presence shine.</p>
     <p class="hero-tagline-sub" id="taglineSub">Be yourself. <span class="gold-strong">Stronger. More impactful.</span></p>
@@ -742,7 +773,7 @@ transform:translateY(0);
   <div class="svc-inner">
     <div class="svc-head reveal">
       <div class="eyebrow" data-i18n="svc-eyebrow">What I Offer</div>
-      <h2 class="sec-title" data-i18n-special="svc-title">Three ways to work.<br><em>One standard of excellence.</em></h2>
+      <h2 class="sec-title" data-i18n-special="svc-title">Three ways to work.<br><em>One standard of <span style="color:var(--gold);">excellence.</span></em></h2>
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal">
@@ -884,7 +915,7 @@ transform:translateY(0);
 <section class="workshops" id="workshops">
   <div class="ws-inner">
     <div class="reveal">
-      <div class="eyebrow"><span style="color:var(--black);">WORKSHOP</span> <span style="color:var(--gold);">FORMATS</span></div>
+      <div class="eyebrow"><span style="color:#1a1a1a !important;letter-spacing:5px;">WORKSHOP</span> <span style="color:#c8a04a !important;letter-spacing:5px;">FORMATS</span></div>
       <h2 class="sec-title">Workshop<br><em>Formats.</em></h2>
       <p style="font-size:14px;font-weight:300;line-height:2;color:var(--grey);margin-top:20px;max-width:640px;">Each workshop is tailored to your organisation&rsquo;s context, sector and real communication challenges. Maximum 10 participants. Available as half-day or full-day. All prices excl. VAT.</p>
       <p style="font-size:13px;font-weight:300;color:var(--grey);margin-top:24px;font-style:italic;">Half day &euro;1,750 &middot; Full day &euro;3,500 &middot; All prices excl. VAT &middot; Eligible for co-financement formation professionnelle continue</p>
@@ -922,7 +953,7 @@ transform:translateY(0);
   <div class="fw-inner" style="grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;">
     <div class="reveal" style="position:sticky;top:120px;">
       <div class="eyebrow" data-i18n="fw-eyebrow">Who This Is For</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(52px,5vw,80px);font-weight:300;color:var(--black);line-height:1.05;margin-bottom:0;">Who Is <em style="color:var(--gold);font-style:italic;">SHINE</em><br>For</h2>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(52px,5vw,80px);font-weight:600;color:var(--black);line-height:1.05;margin-bottom:0;">Who Is <em style="color:var(--gold);font-style:italic;">SHINE</em><br>For</h2>
     </div>
     <div class="fw-content reveal">
       <p class="fw-lead">Professionals who already have something important to say &mdash; and want to make sure it <em>lands the way it deserves to.</em></p>
@@ -1173,7 +1204,9 @@ function setLang(lang) {
   // Services title — needs innerHTML for <br> and <em>
   var svcTitle = document.querySelector('.sec-title[data-i18n-special="svc-title"]');
   if (svcTitle && t['svc-title-line1'] && t['svc-title-line2']) {
-    svcTitle.innerHTML = t['svc-title-line1'] + '<br><em>' + t['svc-title-line2'] + '</em>';
+    var line2Parts = t['svc-title-line2'].split(' ');
+    var lastWord = line2Parts.pop();
+    svcTitle.innerHTML = t['svc-title-line1'] + '<br><em>' + line2Parts.join(' ') + ' <span style="color:var(--gold);">' + lastWord + '</span></em>';
   }
 
   // Floor is yours desc
