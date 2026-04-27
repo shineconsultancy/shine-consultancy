@@ -584,7 +584,9 @@ filter:blur(0);
 transform:translateY(0);
 }
 
+.gold-strong{color:var(–gold);}
 </style>
+
 </head>
 <body>
 
@@ -629,7 +631,7 @@ transform:translateY(0);
   <div class="p" style="left:72%;animation-duration:19s;animation-delay:7s"></div>
   <div class="p" style="left:90%;animation-duration:14s;animation-delay:3s"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow" data-en="Professional Communication Coaching · Luxembourg" data-fr="Coaching en communication professionnelle · Luxembourg" data-de="Professionelles Kommunikations-Coaching · Luxemburg" data-pt="Coaching de comunicação profissional · Luxemburgo">Professional Communication Coaching · Luxembourg</div>
+    <div class="hero-eyebrow" data-i18n="hero-eyebrow" data-en="Professional Communication Coaching · Luxembourg" data-fr="Coaching en communication professionnelle · Luxembourg" data-de="Professionelles Kommunikations-Coaching · Luxemburg" data-pt="Coaching de comunicação profissional · Luxemburgo">Professional Communication Coaching · Luxembourg</div>
     <div class="diamond-wrap">
       <svg class="diamond-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -670,8 +672,8 @@ transform:translateY(0);
     </div>
     <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.2s">S</span><span class="shine-letter" style="animation-delay:0.5s">H</span><span class="shine-letter" style="animation-delay:0.8s">I</span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.4s">E</span><span class="hero-title-sparkle"></span></h1>
     <p class="hero-sub">SHINE Stage Confidence&reg;<br>by Monica Semedo</p>
-    <p class="hero-tagline-main" data-en="Let your presence shine." data-fr="Laissez votre présence briller." data-de="Lassen Sie Ihre Präsenz strahlen." data-pt="Deixe a sua presença brilhar.">Let your presence shine.</p>
-    <p class="hero-tagline-sub" id="taglineSub">Be yourself. Stronger. More impactful.</p>
+    <p class="hero-tagline-main" data-i18n="hero-tagline" data-en="Let your presence shine." data-fr="Laissez votre présence briller." data-de="Lassen Sie Ihre Präsenz strahlen." data-pt="Deixe a sua presença brilhar.">Let your presence shine.</p>
+    <p class="hero-tagline-sub" id="taglineSub" data-i18n="hero-sub">Be yourself. <span class="gold-strong">Stronger. More impactful.</span></p>
     <div class="hero-cta">
       <a href="#contact" class="btn-black">Work with me</a>
       <a href="#about" class="btn-gold-out">My story</a>
@@ -686,10 +688,10 @@ transform:translateY(0);
 <!-- STATS -->
 
 <div class="stats">
-  <div class="stat"><span class="stat-n">4</span><span class="stat-l">Age on stage &middot; Singer &middot; Performer</span></div>
-  <div class="stat"><span class="stat-n">22</span><span class="stat-l">Years &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span></div>
-  <div class="stat"><span class="stat-n">5</span><span class="stat-l">Languages &middot; One authentic voice</span></div>
-  <div class="stat"><span class="stat-n">5</span><span class="stat-l">Years &middot; European Parliament</span></div>
+  <div class="stat"><span class="stat-n">4</span><span class="stat-l" data-i18n="stat-1">Age on stage &middot; Singer &middot; Performer</span></div>
+  <div class="stat"><span class="stat-n">22</span><span class="stat-l" data-i18n="stat-2">Years &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span></div>
+  <div class="stat"><span class="stat-n">5</span><span class="stat-l" data-i18n="stat-3">Languages &middot; One authentic voice</span></div>
+  <div class="stat"><span class="stat-n">5</span><span class="stat-l" data-i18n="stat-4">Years &middot; European Parliament</span></div>
 </div>
 <div class="divider"></div>
 
@@ -703,7 +705,7 @@ transform:translateY(0);
     <div class="about-quote-tag">&ldquo;The stage is always a performance. SHINE makes sure it is unmistakably yours.&rdquo;</div>
   </div>
   <div>
-    <div class="eyebrow reveal">The person behind SHINE</div>
+    <div class="eyebrow reveal" data-i18n="about-eyebrow">The person behind SHINE</div>
     <h2 class="about-title reveal">Monica<br><em>Semedo</em></h2>
     <p class="about-lead reveal">I have been catching audiences since before I could explain how &mdash; and I have spent a lifetime refining that instinct into something I can now give to others.</p>
     <p class="about-body reveal">For 22 years the face of RTL T&eacute;l&eacute; L&euml;tzebuerg &mdash; starting at age 11, anchoring news, hosting shows, presenting live events. Master of Ceremonies at the Olympic Games of the Small States of Europe, Ironman 70.3, Philharmonie Luxembourg and major corporate events. Member of the European Parliament 2019&ndash;2024, where I chaired sessions, spoke in plenary and represented Luxembourg on the international stage. Speaker at the FRA Forum Vienna, Reykjavik Global Forum and UN pre-Summit Geneva. Featured on CNN, BBC and Euronews.</p>
@@ -732,7 +734,7 @@ transform:translateY(0);
 <section class="services" id="services">
   <div class="svc-inner">
     <div class="svc-head reveal">
-      <div class="eyebrow">What I Offer</div>
+      <div class="eyebrow" data-i18n="svc-eyebrow">What I Offer</div>
       <h2 class="sec-title">Three ways to work.<br><em>One standard of excellence.</em></h2>
     </div>
     <div class="svc-grid">
@@ -838,10 +840,9 @@ transform:translateY(0);
         <p class="pw-be-yourself">Be yourself.</p>
         <p class="pw-name-reveal">Find Your Voice</p>
         <p class="pw-desc">For any professional who speaks publicly as part of who they are. You will leave each session clearer about what you want to say &mdash; and more confident about how you say it. By the final session you will have rehearsed your real moment and walked away ready.</p>
-        <p style="font-size:13px;font-weight:300;line-height:2;color:var(--grey);margin-bottom:16px;">5 sessions &times; 90 minutes &middot; Begins with a free Strategic Diagnosis Session</p>
+        <p style="font-size:13px;font-weight:300;line-height:2;color:var(--grey);margin-bottom:16px;">5 sessions &times; 90 minutes &middot; Includes a complimentary Diagnosis Session</p>
         <p style="font-size:14px;font-weight:500;color:var(--black);margin-bottom:4px;">From &euro;1,750 excl. VAT</p>
-        <p style="font-size:11px;font-weight:300;color:var(--grey);font-style:italic;">The Diagnosis Session is complimentary.</p>
-        <p style="font-size:13px;font-weight:300;line-height:1.9;color:var(--grey);margin-top:16px;">We begin with a full assessment. Session by session, we build your message, your delivery and your presence around your real upcoming moments. By the final session, you will have rehearsed your real situation and walked away ready.</p>
+        <p style="font-size:11px;font-weight:300;color:var(--grey);font-style:italic;margin-bottom:0;">Each session is built entirely around you.</p>
       </div>
       <div class="pw-card reveal">
         <span class="pw-sessions">6 Sessions</span>
@@ -873,8 +874,8 @@ transform:translateY(0);
 <section class="workshops" id="workshops">
   <div class="ws-inner">
     <div class="reveal">
-      <div class="eyebrow" data-en="Workshop Formats" data-fr="Formats d'ateliers" data-de="Workshop-Formate" data-pt="Formatos de workshops">Workshop <span style="color:var(--gold);font-style:italic;">Formats</span></div>
-      <h2 class="sec-title">For Your<br><em>Team.</em></h2>
+      <div class="eyebrow" data-en="Workshop Formats" data-fr="Ateliers &amp; Formats" data-de="Workshops &amp; Formate" data-pt="Formatos de workshops" data-fr="Formats d'ateliers" data-de="Workshop-Formate" data-pt="Formatos de workshops">Workshop <span style="color:var(--gold);font-style:italic;">Formats</span></div>
+      <h2 class="sec-title">Workshop<br><em>Formats.</em></h2>
       <p style="font-size:14px;font-weight:300;line-height:2;color:var(--grey);margin-top:20px;max-width:640px;">Each workshop is tailored to your organisation&rsquo;s context, sector and real communication challenges. Maximum 10 participants. Available as half-day or full-day. All prices excl. VAT.</p>
       <p style="font-size:13px;font-weight:300;color:var(--grey);margin-top:24px;font-style:italic;">Half day &euro;1,750 &middot; Full day &euro;3,500 &middot; All prices excl. VAT &middot; Eligible for co-financement formation professionnelle continue</p>
     </div>
@@ -942,8 +943,8 @@ transform:translateY(0);
 
 <section class="contact-section" id="contact">
   <div class="contact-inner">
-    <h2 class="contact-lead reveal" data-en="Ready to truly be heard?" data-fr="Prêt·e à être vraiment entendu·e ?" data-de="Bereit, wirklich gehört zu werden?" data-pt="Pronto·a para ser verdadeiramente ouvido·a?">Ready to <em>truly be heard?</em></h2>
-    <p class="contact-body reveal">Every engagement begins with a free discovery call. No pressure, no template. Just a real conversation about where you are and how SHINE can get you there.</p>
+    <h2 class="contact-lead reveal" data-i18n="contact-title" data-en="Ready to truly be heard?" data-fr="Prêt·e à être vraiment entendu·e ?" data-de="Bereit, wirklich gehört zu werden?" data-pt="Pronto·a para ser verdadeiramente ouvido·a?">Ready to <em>truly be heard?</em></h2>
+    <p class="contact-body reveal" data-i18n="contact-desc">Every engagement begins with a free discovery call. No pressure, no template. Just a real conversation about where you are and how SHINE can get you there.</p>
     <form class="form reveal" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div><label class="form-label">First Name</label><input type="text" placeholder="Your first name" required></div>
@@ -966,7 +967,7 @@ transform:translateY(0);
         </select>
       </div>
       <div><label class="form-label">Message</label><textarea placeholder="Tell me about your communication goals or an upcoming moment you want to prepare for..."></textarea></div>
-      <button type="submit" class="btn-submit">Send Message</button>
+      <button type="submit" class="btn-submit" data-i18n="btn-send">Send Message</button>
     </form>
     <p class="contact-alt">Or reach me directly: <a href="mailto:hello@shine-consultancy.lu">hello@shine-consultancy.lu</a> &middot; <a href="tel:+352621410092" style="white-space:nowrap;">+352&nbsp;621&nbsp;41&nbsp;00&nbsp;92</a></p>
   </div>
@@ -1027,124 +1028,60 @@ blurEls.forEach(el=>{el.style.animationPlayState='paused';blurObs.observe(el);})
 // ── LANGUAGE TRANSLATIONS ────────────────────────────────────────
 const translations = {
   en: {
-    'nav-about': `About`,
-    'nav-services': `Services`,
-    'nav-mentoring': `Mentoring`,
-    'nav-workshops': `Workshops`,
-    'nav-contact': `Contact`,
-    'hero-eyebrow': `Professional Communication Coaching · Luxembourg`,
-    'hero-sub-line1': `SHINE Stage Confidence®`,
-    'hero-sub-line2': `by Monica Semedo`,
-    'hero-tagline': `Let your presence shine.`,
-    'btn-work': `Work with me`,
-    'btn-story': `My story`,
-    'about-eyebrow': `The person behind SHINE`,
-    'about-lead': `I have been catching audiences since before I could explain how — and I have spent a lifetime refining that instinct into something I can now give to others.`,
-    'phi-quote': `"Communication is not about what you say. It is about how it lands — and who you are when you say it."`,
-    'svc-eyebrow': `What I Offer`,
-    'svc-title': `Three ways to work. One standard of excellence.`,
-    'floor-label': `Individual Mentoring`,
-    'floor-title': `The Floor Is`,
-    'floor-italic': `Yours.`,
-    'floor-sub': `Be yourself. Find your voice. Own the stage. On camera.`,
-    'floor-desc': `Every pathway begins with a free Strategic Diagnosis Session. From there, we build around your real upcoming communication moments — not a generic programme.`,
-    'ws-eyebrow': `Group Learning`,
-    'ws-title': `Workshop Formats.`,
-    'fw-eyebrow': `Who This Is For`,
-    'contact-title': `Ready to truly be heard?`,
-    'contact-desc': `Every engagement begins with a free discovery call. No pressure, no template. Just a real conversation about where you are and how SHINE can get you there.`,
-    'btn-send': `Send Message`,
-    'contact-direct': `Or reach me directly:`,
+    'nav-about': 'About', 'nav-services': 'Services', 'nav-mentoring': 'Mentoring',
+    'nav-workshops': 'Workshops', 'nav-contact': 'Contact',
+    'hero-eyebrow': 'Professional Communication Coaching · Luxembourg',
+    'hero-tagline': 'Let your presence shine.',
+    'hero-sub-plain': 'Be yourself. ', 'hero-sub-gold': 'Stronger. More impactful.',
+    'btn-work': 'WORK WITH ME', 'btn-story': 'MY STORY', 'btn-send': 'Send Message',
+    'about-eyebrow': 'The person behind SHINE',
+    'stat-1': 'Age on stage · Singer · Performer', 'stat-2': 'Years · RTL Télé Lëtzebuerg',
+    'stat-3': 'Languages · One authentic voice', 'stat-4': 'Years · European Parliament',
+    'svc-eyebrow': 'What I Offer', 'svc-title': 'Three ways to work. One standard of excellence.',
+    'contact-title': 'Ready to truly be heard?',
+    'contact-desc': 'Every engagement begins with a free discovery call. No pressure, no template. Just a real conversation about where you are and how SHINE can get you there.',
   },
   fr: {
-    'nav-about': `À propos`,
-    'nav-services': `Services`,
-    'nav-mentoring': `Mentorat`,
-    'nav-workshops': `Ateliers`,
-    'nav-contact': `Contact`,
-    'hero-eyebrow': `Coaching en communication professionnelle · Luxembourg`,
-    'hero-sub-line1': `SHINE Stage Confidence®`,
-    'hero-sub-line2': `par Monica Semedo`,
-    'hero-tagline': `Laissez votre présence briller.`,
-    'btn-work': `Travaillons ensemble`,
-    'btn-story': `Mon histoire`,
-    'about-eyebrow': `La personne derrière SHINE`,
-    'about-lead': `Je captive les audiences depuis avant de pouvoir expliquer comment — et j’ai passé toute ma vie à affiner cet instinct pour pouvoir le transmettre.`,
-    'phi-quote': `"La communication ne se limite pas à ce que vous dites. Elle concerne la façon dont cela atterrit — et qui vous êtes quand vous le dites."`,
-    'svc-eyebrow': `Ce que je propose`,
-    'svc-title': `Trois façons de travailler. Un seul niveau d’excellence.`,
-    'floor-label': `Mentorat individuel`,
-    'floor-title': `Le micro est`,
-    'floor-italic': `le vôtre.`,
-    'floor-sub': `Soyez vous-même. Trouvez votre voix. Maîtrisez la scène. Face caméra.`,
-    'floor-desc': `Chaque parcours commence par une Session de Diagnostic Stratégique offerte. Nous construisons ensuite autour de vos prochains moments de communication réels.`,
-    'ws-eyebrow': `Formation en groupe`,
-    'ws-title': `Formats d’ateliers.`,
-    'fw-eyebrow': `Pour qui`,
-    'contact-title': `Prêt·e à être vraiment entendu·e ?`,
-    'contact-desc': `Chaque collaboration commence par un appel découverte gratuit. Sans pression, sans modèle. Une vraie conversation sur où vous en êtes et comment SHINE peut vous aider.`,
-    'btn-send': `Envoyer`,
-    'contact-direct': `Ou contactez-moi directement :`,
+    'nav-about': 'À propos', 'nav-services': 'Services', 'nav-mentoring': 'Mentorat',
+    'nav-workshops': 'Ateliers', 'nav-contact': 'Contact',
+    'hero-eyebrow': 'Coaching en communication professionnelle · Luxembourg',
+    'hero-tagline': 'Laissez votre présence briller.',
+    'hero-sub-plain': 'Soyez vous-même. ', 'hero-sub-gold': 'Plus fort·e. Plus percutant·e.',
+    'btn-work': 'TRAVAILLONS ENSEMBLE', 'btn-story': 'MON HISTOIRE', 'btn-send': 'Envoyer',
+    'about-eyebrow': 'La personne derrière SHINE',
+    'stat-1': 'Âge sur scène · Chanteuse · Artiste', 'stat-2': 'Ans · RTL Télé Lëtzebuerg',
+    'stat-3': 'Langues · Une voix authentique', 'stat-4': 'Ans · Parlement européen',
+    'svc-eyebrow': 'Ce que je propose', 'svc-title': 'Trois approches, un seul niveau d’excellence.',
+    'contact-title': 'Prêt·e à être vraiment entendu·e ?',
+    'contact-desc': 'Chaque collaboration commence par un appel découverte gratuit. Sans pression, sans modèle. Une vraie conversation sur où vous en êtes et comment SHINE peut vous aider.',
   },
   de: {
-    'nav-about': `Über mich`,
-    'nav-services': `Leistungen`,
-    'nav-mentoring': `Mentoring`,
-    'nav-workshops': `Workshops`,
-    'nav-contact': `Kontakt`,
-    'hero-eyebrow': `Professionelles Kommunikations-Coaching · Luxemburg`,
-    'hero-sub-line1': `SHINE Stage Confidence®`,
-    'hero-sub-line2': `von Monica Semedo`,
-    'hero-tagline': `Lassen Sie Ihre Präsenz strahlen.`,
-    'btn-work': `Mit mir arbeiten`,
-    'btn-story': `Meine Geschichte`,
-    'about-eyebrow': `Die Person hinter SHINE`,
-    'about-lead': `Ich fessle Publikum, seit ich erklären kann — und habe ein Leben damit verbracht, diesen Instinkt zu verfeinern, um ihn weiterzugeben.`,
-    'phi-quote': `"Kommunikation ist nicht das, was Sie sagen. Es geht darum, wie es ankommt — und wer Sie sind, wenn Sie es sagen."`,
-    'svc-eyebrow': `Was ich anbiete`,
-    'svc-title': `Drei Wege der Zusammenarbeit. Ein Standard der Exzellenz.`,
-    'floor-label': `Individuelles Mentoring`,
-    'floor-title': `Die Bühne gehört`,
-    'floor-italic': `Ihnen.`,
-    'floor-sub': `Seien Sie selbst. Finden Sie Ihre Stimme. Meistern Sie die Bühne. Vor der Kamera.`,
-    'floor-desc': `Jeder Weg beginnt mit einer kostenlosen Strategischen Diagnosesitzung. Dann bauen wir gemeinsam um Ihre realen Kommunikationsmomente.`,
-    'ws-eyebrow': `Gruppentraining`,
-    'ws-title': `Workshop-Formate.`,
-    'fw-eyebrow': `Für wen`,
-    'contact-title': `Bereit, wirklich gehört zu werden?`,
-    'contact-desc': `Jede Zusammenarbeit beginnt mit einem kostenlosen Kennenlerngespräch. Kein Druck, kein Template. Ein echtes Gespräch darüber, wo Sie stehen.`,
-    'btn-send': `Nachricht senden`,
-    'contact-direct': `Oder direkt:`,
+    'nav-about': 'Über mich', 'nav-services': 'Leistungen', 'nav-mentoring': 'Mentoring',
+    'nav-workshops': 'Workshops', 'nav-contact': 'Kontakt',
+    'hero-eyebrow': 'Professionelles Kommunikations-Coaching · Luxemburg',
+    'hero-tagline': 'Lassen Sie Ihre Präsenz strahlen.',
+    'hero-sub-plain': 'Seien Sie selbst. ', 'hero-sub-gold': 'Stärker. Wirkungsvoller.',
+    'btn-work': 'MIT MIR ARBEITEN', 'btn-story': 'MEINE GESCHICHTE', 'btn-send': 'Senden',
+    'about-eyebrow': 'Die Person hinter SHINE',
+    'stat-1': 'Alter auf der Bühne · Sängerin', 'stat-2': 'Jahre · RTL Télé Lëtzebuerg',
+    'stat-3': 'Sprachen · Eine authentische Stimme', 'stat-4': 'Jahre · Europaparlament',
+    'svc-eyebrow': 'Was ich anbiete', 'svc-title': 'Drei Ansätze. Ein Anspruch: Exzellenz.',
+    'contact-title': 'Bereit, wirklich gehört zu werden?',
+    'contact-desc': 'Jede Zusammenarbeit beginnt mit einem kostenlosen Kennenlerngespräch. Kein Druck, kein Template. Ein echtes Gespräch darüber, wo Sie stehen.',
   },
   pt: {
-    'nav-about': `Sobre mim`,
-    'nav-services': `Serviços`,
-    'nav-mentoring': `Mentoria`,
-    'nav-workshops': `Workshops`,
-    'nav-contact': `Contacto`,
-    'hero-eyebrow': `Coaching de comunicação profissional · Luxemburgo`,
-    'hero-sub-line1': `SHINE Stage Confidence®`,
-    'hero-sub-line2': `por Monica Semedo`,
-    'hero-tagline': `Deixe a sua presença brilhar.`,
-    'btn-work': `Trabalhe comigo`,
-    'btn-story': `A minha história`,
-    'about-eyebrow': `A pessoa por trás do SHINE`,
-    'about-lead': `Cativo audiências desde antes de conseguir explicar como — e passei uma vida a aperfeiçoar esse instinto para o poder transmitir.`,
-    'phi-quote': `"A comunicação não é apenas o que se diz. É a forma como chega — e quem se é ao dizê-lo."`,
-    'svc-eyebrow': `O que ofereço`,
-    'svc-title': `Três formas de trabalhar. Um único nível de excelência.`,
-    'floor-label': `Mentoria individual`,
-    'floor-title': `O palco é`,
-    'floor-italic': `seu.`,
-    'floor-sub': `Seja você mesmo. Encontre a sua voz. Domine o palco. Em câmara.`,
-    'floor-desc': `Cada percurso começa com uma Sessão de Diagnóstico Estratégico gratuita. A partir daí, construímos em torno dos seus momentos de comunicação reais.`,
-    'ws-eyebrow': `Formação em grupo`,
-    'ws-title': `Formatos de workshops.`,
-    'fw-eyebrow': `Para quem`,
-    'contact-title': `Pronto·a para ser verdadeiramente ouvido·a?`,
-    'contact-desc': `Cada colaboração começa com uma chamada de descoberta gratuita. Sem pressão, sem modelos. Uma conversa real sobre onde está e como o SHINE o pode ajudar.`,
-    'btn-send': `Enviar mensagem`,
-    'contact-direct': `Ou contacte-me diretamente:`,
+    'nav-about': 'Sobre mim', 'nav-services': 'Serviços', 'nav-mentoring': 'Mentoria',
+    'nav-workshops': 'Workshops', 'nav-contact': 'Contacto',
+    'hero-eyebrow': 'Coaching de comunicação profissional · Luxemburgo',
+    'hero-tagline': 'Deixe a sua presença brilhar.',
+    'hero-sub-plain': 'Seja você mesmo. ', 'hero-sub-gold': 'Mais forte. Mais impactante.',
+    'btn-work': 'TRABALHE COMIGO', 'btn-story': 'A MINHA HISTÓRIA', 'btn-send': 'Enviar',
+    'about-eyebrow': 'A pessoa por trás do SHINE',
+    'stat-1': 'Idade em palco · Cantora · Artista', 'stat-2': 'Anos · RTL Télé Lëtzebuerg',
+    'stat-3': 'Línguas · Uma voz autêntica', 'stat-4': 'Anos · Parlamento Europeu',
+    'svc-eyebrow': 'O que ofereço', 'svc-title': 'Três abordagens. Um único nível de excelência.',
+    'contact-title': 'Pronto·a para ser verdadeiramente ouvido·a?',
+    'contact-desc': 'Cada colaboração começa com uma chamada de descoberta gratuita. Sem pressão, sem modelos. Uma conversa real sobre onde está e como o SHINE o pode ajudar.',
   }
 };
 
@@ -1158,68 +1095,36 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.classList.remove('active');
   });
-  var activeBtn = document.getElementById('btn-' + lang);
-  if (activeBtn) activeBtn.classList.add('active');
+  var ab = document.getElementById('btn-' + lang);
+  if (ab) ab.classList.add('active');
 
   var t = translations[lang];
 
-  // Translate all elements with data-[lang] attributes
-  ['en','fr','de','pt'].forEach(function(l) {
-    document.querySelectorAll('[data-' + l + ']').forEach(function(el) {
-      if (l === lang) {
-        // handled below
-      }
-    });
+  // Translate all data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (!t[key]) return;
+    // Never use innerHTML — only textContent to preserve child elements and animations
+    el.textContent = t[key];
   });
-  document.querySelectorAll('[data-' + lang + ']').forEach(function(el) {
-    var val = el.getAttribute('data-' + lang);
-    if (val) el.textContent = val;
-  });
+
+  // Special: hero-sub needs gold span preserved
+  var sub = document.getElementById('taglineSub');
+  if (sub && t['hero-sub-plain'] && t['hero-sub-gold']) {
+    sub.innerHTML = t['hero-sub-plain'] + '<span class="gold-strong">' + t['hero-sub-gold'] + '</span>';
+  }
 
   // Nav links
   var navLinks = document.querySelectorAll('.nav-links a');
-  ['nav-about','nav-services','nav-mentoring','nav-workshops','nav-contact'].forEach(function(key, i) {
+  var navKeys = ['nav-about','nav-services','nav-mentoring','nav-workshops','nav-contact'];
+  navKeys.forEach(function(key, i) {
     if (navLinks[i] && t[key]) navLinks[i].textContent = t[key];
   });
 
   // Mobile menu
-  var mobileLinks = document.querySelectorAll('.mobile-menu a');
-  ['nav-about','nav-services','nav-mentoring','nav-workshops','nav-contact'].forEach(function(key, i) {
-    if (mobileLinks[i] && t[key]) mobileLinks[i].textContent = t[key];
-  });
-
-  // Hero tagline sub
-  var taglineSub = document.querySelector('.hero-tagline-sub');
-  if (taglineSub) {
-    var subText = {'en':'Be yourself. <span style="color:var(--gold)">Stronger. More impactful.</span>',
-      'fr':'Soyez vous-même. <span style="color:var(--gold)">Plus fort·e. Plus percutant·e.</span>',
-      'de':'Seien Sie selbst. <span style="color:var(--gold)">Stärker. Wirkungsvoller.</span>',
-      'pt':'Seja você mesmo. <span style="color:var(--gold)">Mais forte. Mais impactante.</span>'};
-    if (subText[lang]) taglineSub.innerHTML = subText[lang];
-  }
-
-  // Services eyebrow
-  var svcEyebrow = document.querySelector('#services .eyebrow');
-  if (svcEyebrow && t['svc-eyebrow']) svcEyebrow.textContent = t['svc-eyebrow'];
-
-  // Services title
-  var svcLead = document.querySelector('.svc-lead');
-  if (svcLead && t['svc-title']) svcLead.textContent = t['svc-title'];
-
-  // Contact body
-  var contactBody = document.querySelector('.contact-body');
-  if (contactBody && t['contact-desc']) contactBody.textContent = t['contact-desc'];
-
-  // Send button
-  var btnSend = document.querySelector('button[type="submit"], .btn-submit');
-  if (btnSend && t['btn-send']) btnSend.textContent = t['btn-send'];
-
-  // Work with me / My story buttons
-  document.querySelectorAll('.btn-black').forEach(function(btn) {
-    if (btn.getAttribute('href') === '#contact' && t['btn-work']) btn.textContent = t['btn-work'];
-  });
-  document.querySelectorAll('.btn-gold-out').forEach(function(btn) {
-    if (btn.getAttribute('href') === '#about' && t['btn-story']) btn.textContent = t['btn-story'];
+  var mobLinks = document.querySelectorAll('.mobile-menu a');
+  navKeys.forEach(function(key, i) {
+    if (mobLinks[i] && t[key]) mobLinks[i].textContent = t[key];
   });
 }
 
