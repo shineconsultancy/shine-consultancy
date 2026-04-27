@@ -116,7 +116,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .hero::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(200,160,74,0.07) 0%,transparent 70%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,160,74,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,74,0.05) 1px,transparent 1px);background-size:80px 80px;animation:gridShift 25s linear infinite;pointer-events:none}
 @keyframes gridShift{from{transform:translateY(0)}to{transform:translateY(80px)}}
-.hero-beam{position:absolute;top:0;left:calc(50% - 13px);transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,rgba(200,160,74,0.5) 0%,rgba(200,160,74,0.06) 50%,transparent 80%);animation:beamPulse 5s ease-in-out infinite alternate;pointer-events:none}
+.hero-beam{position:absolute;top:0;left:calc(50% - 14px);transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,rgba(200,160,74,0.5) 0%,rgba(200,160,74,0.06) 50%,transparent 80%);animation:beamPulse 5s ease-in-out infinite alternate;pointer-events:none}
 @keyframes beamPulse{from{opacity:0.5}to{opacity:1}}
 .p{position:absolute;width:1.5px;height:1.5px;background:var(–gold);border-radius:50%;animation:riseUp linear infinite;opacity:0;pointer-events:none}
 @keyframes riseUp{0%{transform:translateY(100vh);opacity:0}8%{opacity:0.5}85%{opacity:0.15}100%{transform:translateY(-30px);opacity:0}}
@@ -124,7 +124,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .hero-eyebrow{font-size:9px;font-weight:400;letter-spacing:7px;text-transform:uppercase;color:var(–gold);display:flex;align-items:center;gap:20px;margin-bottom:48px;animation:fadeUp 1s ease 0.2s both}
 .hero-eyebrow::before,.hero-eyebrow::after{content:’’;width:44px;height:1px;background:linear-gradient(to right,transparent,var(–gold))}
 .hero-eyebrow::after{background:linear-gradient(to left,transparent,var(–gold))}
-.diamond-wrap{display:flex;justify-content:center;align-items:center;width:100%;margin:0 0 24px 0;position:relative;left:-13px;animation:fadeUp 1s ease 0.05s both;}
+.diamond-wrap{display:flex;justify-content:center;align-items:center;width:100%;margin:0 0 24px 0;position:relative;left:calc(50% - 14px);transform:translateX(-50%);animation:fadeUp 1s ease 0.05s both;}
 .diamond-svg{width:72px;height:72px;animation:diamondGlow 3s ease-in-out 1s infinite, diamondSpin 6s ease-in-out 1s infinite}
 @keyframes diamondGlow{
 0%{filter:drop-shadow(0 0 6px rgba(200,160,74,0.4))}
@@ -708,8 +708,8 @@ transform:translateY(0);
     <div class="eyebrow reveal" data-i18n="about-eyebrow">The person behind SHINE</div>
     <h2 class="about-title reveal">Monica<br><em>Semedo</em></h2>
     <p class="about-lead reveal" data-i18n="about-lead">I have been catching audiences since before I could explain how &mdash; and I have spent a lifetime refining that instinct into something I can now give to others.</p>
-    <p class="about-body reveal">For 22 years the face of RTL T&eacute;l&eacute; L&euml;tzebuerg &mdash; starting at age 11, anchoring news, hosting shows, presenting live events. Master of Ceremonies at the Olympic Games of the Small States of Europe, Ironman 70.3, Philharmonie Luxembourg and major corporate events. Member of the European Parliament 2019&ndash;2024, where I chaired sessions, spoke in plenary and represented Luxembourg on the international stage. Speaker at the FRA Forum Vienna, Reykjavik Global Forum and UN pre-Summit Geneva. Featured on CNN, BBC and Euronews.</p>
-    <p class="about-body reveal"><strong>Through all of it, I learned something no course teaches: how to hold a room not by being louder &mdash; but by being fully, authentically present. That is what I now teach through SHINE Stage Confidence&reg;.</strong></p>
+    <p class="about-body reveal" data-i18n="about-body-1">For 22 years the face of RTL T&eacute;l&eacute; L&euml;tzebuerg &mdash; starting at age 11, anchoring news, hosting shows, presenting live events. Master of Ceremonies at the Olympic Games of the Small States of Europe, Ironman 70.3, Philharmonie Luxembourg and major corporate events. Member of the European Parliament 2019&ndash;2024, where I chaired sessions, spoke in plenary and represented Luxembourg on the international stage. Speaker at the FRA Forum Vienna, Reykjavik Global Forum and UN pre-Summit Geneva. Featured on CNN, BBC and Euronews.</p>
+    <p class="about-body reveal" data-i18n="about-body-2"><strong>Through all of it, I learned something no course teaches: how to hold a room not by being louder &mdash; but by being fully, authentically present. That is what I now teach through SHINE Stage Confidence&reg;.</strong></p>
     <div class="timeline reveal">
       <div class="tl"><span class="tl-y">Since 4</span><div class="tl-t"><strong>Singer &amp; Performer &middot; Luxembourg stages</strong>First album 1992 &middot; First number one 1995</div></div>
       <div class="tl"><span class="tl-y">1995&ndash;2018</span><div class="tl-t"><strong>TV Journalist &amp; Presenter &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</strong>Started at age 11 &middot; 22 years as anchor</div></div>
@@ -909,14 +909,13 @@ transform:translateY(0);
 <!-- FOR WHO -->
 
 <section class="for-who">
-  <div class="fw-inner">
-    <div class="reveal">
-      <img class="fw-img" src="https://shineconsultancy.github.io/shine-consultancy/Stage.jpg.JPG" alt="Monica Semedo speaking on stage Luxembourg">
+  <div class="fw-inner" style="grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;">
+    <div class="reveal" style="position:sticky;top:120px;">
+      <div class="eyebrow" data-i18n="fw-eyebrow">Who This Is For</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(52px,5vw,80px);font-weight:300;color:var(--black);line-height:1.05;margin-bottom:0;">Who Is <em style="color:var(--gold);font-style:italic;">SHINE</em><br>For</h2>
     </div>
     <div class="fw-content reveal">
-      <div class="eyebrow" data-i18n="fw-eyebrow">Who This Is For</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(40px,5vw,72px);font-weight:300;color:var(--black);line-height:1.15;margin-bottom:32px;">Professionals who already have something important to say &mdash; and want to make sure it <em style="color:var(--gold);">lands the way it deserves to.</em></h2>
-      <p class="fw-lead" style="display:none;">Professionals who already have something important to say &mdash; and want to make sure it <em>lands the way it deserves to.</em></p>
+      <p class="fw-lead">Professionals who already have something important to say &mdash; and want to make sure it <em>lands the way it deserves to.</em></p>
       <p class="fw-note">Luxembourg&rsquo;s multicultural reality means your audience may shift languages mid-room, mid-panel, mid-meeting. SHINE is built for exactly that environment.</p>
       <div class="aud-list">
         <div class="aud-item"><div class="aud-t">Anyone who speaks publicly</div><div class="aud-d">Executives, politicians, women in leadership, civil servants, moderators, spokespersons. Beginners and experienced speakers alike. SHINE meets you where you are.</div></div>
@@ -1036,6 +1035,8 @@ const translations = {
     'hero-sub-plain': 'Be yourself. ', 'hero-sub-gold': 'Stronger. More impactful.',
     'btn-work': 'WORK WITH ME', 'btn-story': 'MY STORY', 'btn-send': 'Send Message',
     'about-eyebrow': 'The person behind SHINE',
+    'about-body-1': `For 22 years the face of RTL Télé Lëtzebuerg — starting at age 11, anchoring news, hosting shows, presenting live events. Master of Ceremonies for major events across Luxembourg and Europe. Member of the European Parliament 2019–2024.`,
+    'about-body-2': `Through all of it, I learned something no course teaches: how to hold a room. How to make one person in ten thousand feel spoken to. How to be yourself — completely — in the most exposed moments of your professional life. That is what SHINE gives you.`,
     'about-lead': 'I have been catching audiences since before I could explain how — and I have spent a lifetime refining that instinct into something I can now give to others.',
     'stat-1': 'Age on stage · Singer · Performer', 'stat-2': 'Years · RTL Télé Lëtzebuerg',
     'stat-3': 'Languages · One authentic voice', 'stat-4': 'Years · European Parliament',
@@ -1052,6 +1053,8 @@ const translations = {
     'hero-sub-plain': 'Soyez vous-même. ', 'hero-sub-gold': 'Plus fort·e. Plus percutant·e.',
     'btn-work': 'TRAVAILLONS ENSEMBLE', 'btn-story': 'MON HISTOIRE', 'btn-send': 'Envoyer',
     'about-eyebrow': 'La personne derrière SHINE',
+    'about-body-1': `Pendant 22 ans, le visage de RTL Télé Lëtzebuerg — animatrice de journaux, d'émissions et d'événements en direct. Maître de cérémonie pour de grands événements au Luxembourg et en Europe. Membre du Parlement européen 2019–2024.`,
+    'about-body-2': `À travers tout cela, j'ai appris quelque chose qu'aucun cours n'enseigne : comment tenir une salle. Comment faire en sorte qu'une seule personne parmi dix mille se sente concernée. Comment être soi-même — complètement — dans les moments les plus exposés de sa vie professionnelle. C'est ce que SHINE vous offre.`,
     'about-lead': 'Je capte les audiences depuis avant de savoir comment l’expliquer — et j’ai passé toute ma vie à affiner cet instinct pour pouvoir le transmettre.',
     'stat-1': 'Âge sur scène · Chanteuse · Artiste', 'stat-2': 'Ans · RTL Télé Lëtzebuerg',
     'stat-3': 'Langues · Une voix authentique', 'stat-4': 'Ans · Parlement européen',
@@ -1065,9 +1068,11 @@ const translations = {
     'nav-workshops': 'Workshops', 'nav-contact': 'Kontakt',
     'hero-eyebrow': 'Professionelles Kommunikations-Coaching · Luxemburg',
     'hero-tagline': 'Lassen Sie Ihre Präsenz strahlen.',
-    'hero-sub-plain': 'Seien Sie selbst. ', 'hero-sub-gold': 'Stärker. Wirkungsvoller.',
+    'hero-sub-plain': 'Seien Sie Sie selbst. ', 'hero-sub-gold': 'Stärker. Wirkungsvoller.',
     'btn-work': 'MIT MIR ARBEITEN', 'btn-story': 'MEINE GESCHICHTE', 'btn-send': 'Senden',
     'about-eyebrow': 'Die Person hinter SHINE',
+    'about-body-1': `22 Jahre lang das Gesicht von RTL Télé Lëtzebuerg — Nachrichtensprecherin, Moderatorin, Live-Eventpräsentatorin. Zeremonienmeisterin für große Events in Luxemburg und Europa. Mitglied des Europäischen Parlaments 2019–2024.`,
+    'about-body-2': `Durch all das habe ich etwas gelernt, das kein Kurs lehrt: wie man einen Raum hält. Wie man dafür sorgt, dass sich eine Person unter Zehntausenden angesprochen fühlt. Wie man man selbst ist — vollständig — in den exponiertesten Momenten des Berufslebens. Das ist es, was SHINE Ihnen gibt.`,
     'about-lead': 'Ich fessle Publikum, seit ich denken kann — und habe ein Leben damit verbracht, diesen Instinkt zu verfeinern, um ihn weiterzugeben.',
     'stat-1': 'Alter auf der Bühne · Sängerin', 'stat-2': 'Jahre · RTL Télé Lëtzebuerg',
     'stat-3': 'Sprachen · Eine authentische Stimme', 'stat-4': 'Jahre · Europaparlament',
@@ -1084,6 +1089,8 @@ const translations = {
     'hero-sub-plain': 'Seja você mesmo. ', 'hero-sub-gold': 'Mais forte. Mais impactante.',
     'btn-work': 'TRABALHE COMIGO', 'btn-story': 'A MINHA HISTÓRIA', 'btn-send': 'Enviar',
     'about-eyebrow': 'A pessoa por trás do SHINE',
+    'about-body-1': `Durante 22 anos, o rosto da RTL Télé Lëtzebuerg — a apresentar noticiários, programas e eventos ao vivo. Mestre de cerimónias em grandes eventos no Luxemburgo e na Europa. Membro do Parlamento Europeu 2019–2024.`,
+    'about-body-2': `Com tudo isso, aprendi algo que nenhum curso ensina: como segurar uma sala. Como fazer uma pessoa em dez mil sentir que está a ser falada diretamente. Como ser você mesmo — completamente — nos momentos mais expostos da sua vida profissional. É isso que o SHINE lhe dá.`,
     'about-lead': 'Capto audiências desde antes de saber como explicar isso — e passei a vida a aperfeiçoar esse instinto para o poder transmitir.',
     'stat-1': 'Idade em palco · Cantora · Artista', 'stat-2': 'Anos · RTL Télé Lëtzebuerg',
     'stat-3': 'Línguas · Uma voz autêntica', 'stat-4': 'Anos · Parlamento Europeu',
