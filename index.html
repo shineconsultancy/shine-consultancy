@@ -490,9 +490,6 @@ color: #0d0d0d !important;
 
 /* ── SHINE LETTER BY LETTER ── */
 
-.shine-letter{display:inline-block;opacity:0;filter:blur(24px);animation:letterReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards;}
-@keyframes letterReveal{
-0%{opacity:0;filter:blur(24px);transform:translateY(8px) scale(0.95);}
 60%{opacity:1;filter:blur(2px);transform:translateY(-2px) scale(1.02);}
 100%{opacity:1;filter:blur(0px);transform:translateY(0) scale(1);}
 }
@@ -590,8 +587,7 @@ transform:translateY(0);
 }
 
 /* SHINE heartbeat after reveal */
-@keyframes shinePulse{
-0%{transform:scale(1);}
+
 15%{transform:scale(1.018);}
 30%{transform:scale(0.995);}
 45%{transform:scale(1.01);}
@@ -599,28 +595,6 @@ transform:translateY(0);
 100%{transform:scale(1);}
 }
 
-/* SHINE shimmer — thin gold sweep */
-
-.hero-title::before{
-content:’’;
-position:absolute;
-top:0;left:-100%;
-width:15%;height:100%;
-background:linear-gradient(
-90deg,
-transparent 0%,
-rgba(200,160,74,0.12) 40%,
-rgba(255,248,210,0.45) 50%,
-rgba(200,160,74,0.12) 60%,
-transparent 100%
-);
-transform:skewX(-15deg);
-animation:goldSweep 8s ease-in-out 4s infinite;
-pointer-events:none;
-z-index:2;
-}
-@keyframes goldSweep{
-0%{left:-100%;opacity:0;}
 3%{opacity:1;}
 48%{left:120%;opacity:1;}
 52%,100%{left:120%;opacity:0;}
@@ -630,22 +604,26 @@ z-index:2;
 #workshops .eyebrow span:first-child { color: #1a1a1a !important; }
 #workshops .eyebrow span:last-child { color: #c8a04a !important; }
 
-/* ── SHINE HERO TITLE ── */
-.hero-title{
-font-family:‘Cormorant Garamond’,serif;
-font-size:clamp(72px,14vw,200px);
-font-weight:300;
-letter-spacing:clamp(8px,3vw,24px);
-color:var(–black);
-line-height:0.85;
-margin-bottom:16px;
-position:relative;
-display:inline-block;
-overflow:visible;
-}
-
 /* Quote animation */
 .phi-q{opacity:0;animation:fadeUp 1s ease 0.3s both;}
+
+/* ── SHINE ANIMATION ── */
+.shine-letter{
+display:inline-block;
+opacity:0;
+filter:blur(20px);
+animation:letterReveal 1.2s ease forwards;
+}
+@keyframes letterReveal{
+0%{opacity:0;filter:blur(20px);transform:translateY(6px);}
+100%{opacity:1;filter:blur(0);transform:translateY(0);}
+}
+@keyframes shinePulse{
+0%{transform:scale(1);}
+30%{transform:scale(1.015);}
+60%{transform:scale(0.997);}
+100%{transform:scale(1);}
+}
 
 </style>
 </head>
@@ -1335,22 +1313,27 @@ function setLang(lang) {
 })();
 
 
-// Pulse handled by CSS
 
 
-// Fallback: ensure SHINE letters are visible if animation fails
+
+
+
+// SHINE: force visible after 3s, then pulse once
 setTimeout(function() {
   var letters = document.querySelectorAll('.shine-letter');
   letters.forEach(function(l) {
     l.style.opacity = '1';
     l.style.filter = 'blur(0)';
+    l.style.transform = 'translateY(0)';
   });
-  // Add pulse after letters appear
+}, 3200);
+setTimeout(function() {
   var ht = document.querySelector('.hero-title');
   if (ht) {
-    ht.style.animation = 'shinePulse 1.5s ease-in-out 0s 1';
+    ht.style.animation = 'shinePulse 1.2s ease forwards';
+    setTimeout(function() { ht.style.animation = ''; }, 1300);
   }
-}, 3000);
+}, 3400);
 
 function handleSubmit(e) {
   e.preventDefault();
