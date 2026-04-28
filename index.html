@@ -485,8 +485,8 @@ color: #0d0d0d !important;
 /* hero-title::after removed */
 @keyframes shimmer{0%{background-position:300% center}100%{background-position:-300% center}}
 
-@keyframes sparkle1{0%{opacity:0;transform:scale(0) translateY(0);}30%{opacity:1;transform:scale(1.3) translateY(-14px);}50%{opacity:0.9;transform:scale(1.1) translateY(-18px);}100%{opacity:0;transform:scale(0) translateY(-22px);}}40%{opacity:1;transform:scale(1.2) translateY(-12px);}60%{opacity:0.8;transform:scale(1) translateY(-16px);}}40%,60%{opacity:1;transform:translateY(-12px) scale(1);}}
-@keyframes sparkle2{0%{opacity:0;transform:scale(0) translateY(0);}30%{opacity:1;transform:scale(1.2) translateY(-12px);}50%{opacity:0.8;transform:scale(1) translateY(-16px);}100%{opacity:0;transform:scale(0) translateY(-20px);}}40%{opacity:1;transform:scale(1.2) translateY(-10px);}60%{opacity:0.8;transform:scale(1) translateY(-14px);}}40%,60%{opacity:0.8;transform:translateY(-8px) scale(1);}}
+30%{opacity:1;transform:scale(1.3) translateY(-14px);}50%{opacity:0.9;transform:scale(1.1) translateY(-18px);}100%{opacity:0;transform:scale(0) translateY(-22px);}}40%{opacity:1;transform:scale(1.2) translateY(-12px);}60%{opacity:0.8;transform:scale(1) translateY(-16px);}}40%,60%{opacity:1;transform:translateY(-12px) scale(1);}}
+30%{opacity:1;transform:scale(1.2) translateY(-12px);}50%{opacity:0.8;transform:scale(1) translateY(-16px);}100%{opacity:0;transform:scale(0) translateY(-20px);}}40%{opacity:1;transform:scale(1.2) translateY(-10px);}60%{opacity:0.8;transform:scale(1) translateY(-14px);}}40%,60%{opacity:0.8;transform:translateY(-8px) scale(1);}}
 
 /* ── SHINE LETTER BY LETTER ── */
 
@@ -500,8 +500,8 @@ color: #0d0d0d !important;
 
 /* Sparkle */
 
-@keyframes sparkle1{0%{opacity:0;transform:scale(0) translateY(0);}30%{opacity:1;transform:scale(1.3) translateY(-14px);}50%{opacity:0.9;transform:scale(1.1) translateY(-18px);}100%{opacity:0;transform:scale(0) translateY(-22px);}}40%{opacity:1;transform:scale(1.2) translateY(-12px);}60%{opacity:0.8;transform:scale(1) translateY(-16px);}}40%,60%{opacity:1;transform:translateY(-14px) scale(1);}}
-@keyframes sparkle2{0%{opacity:0;transform:scale(0) translateY(0);}30%{opacity:1;transform:scale(1.2) translateY(-12px);}50%{opacity:0.8;transform:scale(1) translateY(-16px);}100%{opacity:0;transform:scale(0) translateY(-20px);}}40%{opacity:1;transform:scale(1.2) translateY(-10px);}60%{opacity:0.8;transform:scale(1) translateY(-14px);}}40%,60%{opacity:0.8;transform:translateY(-10px) scale(1);}}
+30%{opacity:1;transform:scale(1.3) translateY(-14px);}50%{opacity:0.9;transform:scale(1.1) translateY(-18px);}100%{opacity:0;transform:scale(0) translateY(-22px);}}40%{opacity:1;transform:scale(1.2) translateY(-12px);}60%{opacity:0.8;transform:scale(1) translateY(-16px);}}40%,60%{opacity:1;transform:translateY(-14px) scale(1);}}
+30%{opacity:1;transform:scale(1.2) translateY(-12px);}50%{opacity:0.8;transform:scale(1) translateY(-16px);}100%{opacity:0;transform:scale(0) translateY(-20px);}}40%{opacity:1;transform:scale(1.2) translateY(-10px);}60%{opacity:0.8;transform:scale(1) translateY(-14px);}}40%,60%{opacity:0.8;transform:translateY(-10px) scale(1);}}
 
 .pw-be-yourself{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:300;color:#0d0d0d;margin:0 0 6px 0;display:block;}
 .pw-name-reveal{
@@ -643,9 +643,6 @@ position:relative;
 display:inline-block;
 overflow:visible;
 }
-.hero-title-sparkle{position:absolute;top:-15px;left:0;right:0;bottom:0;pointer-events:none;overflow:visible;}
-.hero-title-sparkle::before{content:“✦”;position:absolute;color:#c8a04a;font-size:22px;animation:sparkle1 3.5s ease-in-out 2.5s infinite;opacity:0;top:0;left:12%;}
-.hero-title-sparkle::after{content:“✦”;position:absolute;color:#e8c96a;font-size:14px;animation:sparkle2 3.5s ease-in-out 3.5s infinite;opacity:0;top:5%;right:18%;}
 
 /* Pulse on last letter after reveal */
 .shine-letter:last-child{
@@ -739,7 +736,7 @@ animation:letterReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards, shinePulse 1s 
         </circle>
       </svg>
     </div>
-    <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.2s">S</span><span class="shine-letter" style="animation-delay:0.5s">H</span><span class="shine-letter" style="animation-delay:0.8s">I</span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.4s">E</span><span class="hero-title-sparkle"></span></h1>
+    <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.2s">S</span><span class="shine-letter" style="animation-delay:0.5s">H</span><span class="shine-letter" style="animation-delay:0.8s">I</span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.4s">E</span></h1>
     <p class="hero-sub">SHINE Stage Confidence&reg;<br>by Monica Semedo</p>
     <p class="hero-tagline-main" data-i18n="hero-tagline" data-en="Let your presence shine." data-fr="Laissez votre présence briller." data-de="Lassen Sie Ihre Präsenz strahlen." data-pt="Deixe a sua presença brilhar.">Let your presence shine.</p>
     <p class="hero-tagline-sub" id="taglineSub">Be yourself. <span class="gold-strong">Stronger. More impactful.</span></p>
@@ -813,7 +810,7 @@ animation:letterReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards, shinePulse 1s 
           <div class="svc-n">01</div>
           <div class="svc-name" data-i18n="svc-card-1">Executive Mentoring</div>
           <span class="svc-tag">Individual &middot; Precision &middot; Depth</span>
-          <p class="svc-desc">Private 1:1 coaching built around your real upcoming communication moments. Three structured pathways — from 4 to 8 sessions — each beginning with a Strategic Diagnosis.</p>
+          <p class="svc-desc" data-i18n="svc-desc-1">Private 1:1 coaching built around your real upcoming communication moments. Three structured pathways — from 4 to 8 sessions — each beginning with a Strategic Diagnosis.</p>
           <ul class="svc-list">
             <li>Clear Leadership &mdash; 4 sessions</li>
             <li>Visible Presence &mdash; 6 sessions</li>
@@ -828,7 +825,7 @@ animation:letterReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards, shinePulse 1s 
           <div class="svc-n">02</div>
           <div class="svc-name" data-i18n="svc-card-2">Group Workshops</div>
           <span class="svc-tag">Teams &middot; Awareness &middot; Transformation</span>
-          <p class="svc-desc">Half-day or full-day workshops for professional teams. Live exercises, immediate feedback, visible improvement &mdash; adapted to your organisation&rsquo;s context and real communication challenges.</p>
+          <p class="svc-desc" data-i18n="svc-desc-2">Half-day or full-day workshops for professional teams. Live exercises, immediate feedback, visible improvement &mdash; adapted to your organisation&rsquo;s context and real communication challenges.</p>
           <ul class="svc-list">
             <li>Lead with Clarity &mdash; executive communication</li>
             <li>Engage the Room &mdash; presence &amp; storytelling</li>
@@ -843,7 +840,7 @@ animation:letterReveal 1.4s cubic-bezier(0.22,1,0.36,1) forwards, shinePulse 1s 
           <div class="svc-n">03</div>
           <div class="svc-name" data-i18n="svc-card-3">On-Camera Presence</div>
           <span class="svc-tag">Video &middot; Media &middot; Visibility</span>
-          <p class="svc-desc">22 years in front of cameras. Monica brings a unique expertise that no standard communication coach can offer &mdash; preparing you to appear natural, credible and fully yourself on screen.</p>
+          <p class="svc-desc" data-i18n="svc-desc-3">22 years in front of cameras. Monica brings a unique expertise that no standard communication coach can offer &mdash; preparing you to appear natural, credible and fully yourself on screen.</p>
           <ul class="svc-list">
             <li>LinkedIn video &amp; corporate communications</li>
             <li>Media interviews &amp; press appearances</li>
@@ -1128,6 +1125,9 @@ var translations = {
     "svc-eyebrow":"What I Offer",
     "svc-title-line1":"Three ways to work.",
     "svc-title-line2":"One standard of excellence.",
+        "svc-desc-1":"Private 1:1 coaching built around your real upcoming communication moments. Three structured pathways — from 4 to 8 sessions — each beginning with a Strategic Diagnosis.",
+    "svc-desc-2":"Half-day or full-day workshops for professional teams. Live exercises, immediate feedback, visible improvement — adapted to your organisation’s context and real communication challenges.",
+    "svc-desc-3":"22 years in front of cameras. Monica brings a unique expertise that no standard communication coach can offer — preparing you to appear natural, credible and fully yourself on screen.",
     "svc-card-1":"Individual Mentoring","svc-card-2":"Group Workshops","svc-card-3":"On-Camera Presence",
     "ws-eyebrow":"For Your Team","mentoring-label":"Individual Mentoring Pathways","fw-eyebrow":"Who This Is For",
     "contact-title":"Ready to truly be heard?",
@@ -1157,6 +1157,9 @@ var translations = {
     "svc-eyebrow":"Ce que je propose",
     "svc-title-line1":"Trois approches.",
     "svc-title-line2":"Un seul niveau d’excellence.",
+        "svc-desc-1":"Coaching individuel privé construit autour de vos moments de communication à venir. Trois parcours structurés — de 4 à 8 séances — chacun commençant par un Diagnostic stratégique.",
+    "svc-desc-2":"Ateliers d’une demi-journée ou d’une journée entière pour des équipes professionnelles. Exercices en direct, feedback immédiat, amélioration visible.",
+    "svc-desc-3":"22 ans face aux caméras. Monica apporte une expertise unique pour vous aider à apparaître naturel, crédible et pleinement vous-même à l’écran.",
     "svc-card-1":"Mentorat individuel","svc-card-2":"Ateliers en groupe","svc-card-3":"Présence caméra",
     "ws-eyebrow":"Pour votre équipe","mentoring-label":"Parcours de mentorat individuel","fw-eyebrow":"Pour qui",
     "contact-title":"Prêt·e à être vraiment entendu·e ?",
@@ -1186,6 +1189,9 @@ var translations = {
     "svc-eyebrow":"Was ich anbiete",
     "svc-title-line1":"Drei Ansätze.",
     "svc-title-line2":"Ein Anspruch: Exzellenz.",
+        "svc-desc-1":"Privates 1:1-Coaching rund um Ihre bevorstehenden Kommunikationsmomente. Drei strukturierte Pfade — von 4 bis 8 Sitzungen — jeder beginnend mit einer strategischen Diagnose.",
+    "svc-desc-2":"Halbtägige oder ganztägige Workshops für professionelle Teams. Live-Übungen, sofortiges Feedback, sichtbare Verbesserung.",
+    "svc-desc-3":"22 Jahre vor Kameras. Monica bietet einzigartige Expertise, um Sie natürlich, glaubwürdig und vollständig Sie selbst vor der Kamera erscheinen zu lassen.",
     "svc-card-1":"Individuelles Mentoring","svc-card-2":"Gruppen-Workshops","svc-card-3":"Kamera-Präsenz",
     "ws-eyebrow":"Für Ihr Team","mentoring-label":"Individuelle Mentoring-Pfade","fw-eyebrow":"Für wen",
     "contact-title":"Bereit, wirklich gehört zu werden?",
@@ -1215,6 +1221,9 @@ var translations = {
     "svc-eyebrow":"O que ofereço",
     "svc-title-line1":"Três abordagens.",
     "svc-title-line2":"Um único nível de excelência.",
+        "svc-desc-1":"Coaching individual privado construído em torno dos seus momentos de comunicação. Três percursos estruturados — de 4 a 8 sessões — cada um começando com um Diagnóstico estratégico.",
+    "svc-desc-2":"Workshops de meio dia ou dia inteiro para equipas profissionais. Exercícios ao vivo, feedback imediato, melhoria visível.",
+    "svc-desc-3":"22 anos em frente a câmaras. Monica traz uma expertise única para o ajudar a aparecer natural, credivél e plenamente você mesmo no ecrã.",
     "svc-card-1":"Mentoria individual","svc-card-2":"Workshops em grupo","svc-card-3":"Presença em câmara",
     "ws-eyebrow":"Para a sua equipa","mentoring-label":"Percursos de mentoria individual","fw-eyebrow":"Para quem",
     "contact-title":"Pronto·a para ser verdadeiramente ouvido·a?",
