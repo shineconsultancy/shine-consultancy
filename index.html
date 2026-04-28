@@ -625,7 +625,21 @@ animation:letterReveal 1.2s ease forwards;
 100%{transform:scale(1);}
 }
 
+/* ── HERO TITLE SIZE ── */
+.hero-title {
+font-family: ‘Cormorant Garamond’, serif !important;
+font-size: clamp(80px, 15vw, 220px) !important;
+font-weight: 300 !important;
+letter-spacing: clamp(8px, 3vw, 28px) !important;
+color: var(–black) !important;
+line-height: 0.85 !important;
+margin-bottom: 16px !important;
+position: relative !important;
+display: inline-block !important;
+overflow: visible !important;
+}
 </style>
+
 </head>
 <body>
 
@@ -867,7 +881,7 @@ animation:letterReveal 1.2s ease forwards;
 <section class="pathways" id="mentoring">
   <div class="pw-inner">
     <div class="reveal">
-      <p style="font-size:9px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(--black);margin-bottom:6px;">Individual <span style="color:var(--gold);">Mentoring</span> Pathways</p>
+      <p style="font-size:9px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(--black);margin-bottom:6px;" data-i18n="mentoring-label">Individual Mentoring Pathways</p>
       <h2 class="sec-title" style="font-size:clamp(52px,7vw,100px);margin-bottom:8px;">The Floor Is <em style="color:var(--gold);font-style:italic;">Yours.</em></h2>
       <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.8vw,22px);font-weight:300;font-style:italic;color:var(--gold);margin-bottom:20px;letter-spacing:1px;" data-i18n="pw-tagline">Be yourself. Find your voice. Own the stage. On camera.</p>
       <p style="font-size:14px;font-weight:300;line-height:2;color:var(--grey);max-width:640px;" data-i18n="pw-intro">Every pathway begins with a complimentary Diagnosis Session &mdash; an in-person meeting where we assess your baseline, choose the right pathway and identify exactly what to tailor to your situation. The real work begins at Session 1.</p>
@@ -1031,6 +1045,8 @@ animation:letterReveal 1.2s ease forwards;
 </footer>
 
 <script>
+console.log("SHINE JS: start");
+try {
 var nav = document.getElementById('nav');
 window.addEventListener('scroll', function() { nav.classList.toggle('scrolled', window.scrollY > 60); });
 function toggleMenu() {
@@ -1359,6 +1375,7 @@ setTimeout(function() {
   }
 }, 3400);
 
+console.log("SHINE JS: setLang defined =", typeof setLang);
 function handleSubmit(e) {
   e.preventDefault();
   var btn = e.target.querySelector('.btn-submit');
@@ -1368,6 +1385,7 @@ function handleSubmit(e) {
   btn.style.color = 'var(--black)';
   e.target.reset();
 }
+} catch(e) { console.error("SHINE JS CRASH:", e.message, e.stack); }
 </script>
 
 </body>
