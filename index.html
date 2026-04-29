@@ -94,7 +94,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .nav-logo{height:52px;width:auto;display:block}
 .nav-links{display:flex;gap:48px;list-style:none}
 .nav-links a{font-size:9px;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:rgba(13,13,13,0.65);text-decoration:none;transition:color 0.3s;position:relative}
-.nav-links a::after{content:’’;position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(–gold);transition:width 0.35s}
+.nav-links a::after{content:;position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(–gold);transition:width 0.35s}
 .nav-links a:hover{color:var(–gold)}
 .nav-links a:hover::after{width:100%}
 
@@ -113,7 +113,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 
 /* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;background:var(–white);padding:120px 40px 100px}
-.hero::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(200,160,74,0.07) 0%,transparent 70%);pointer-events:none}
+.hero::before{content:;position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(200,160,74,0.07) 0%,transparent 70%);pointer-events:none}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(200,160,74,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,74,0.05) 1px,transparent 1px);background-size:80px 80px;animation:gridShift 25s linear infinite;pointer-events:none}
 @keyframes gridShift{from{transform:translateY(0)}to{transform:translateY(80px)}}
 .hero-beam{position:absolute;top:0;left:calc(50% - 14px);transform:translateX(-50%);width:1px;height:100%;background:linear-gradient(to bottom,rgba(200,160,74,0.5) 0%,rgba(200,160,74,0.06) 50%,transparent 80%);animation:beamPulse 5s ease-in-out infinite alternate;pointer-events:none}
@@ -122,7 +122,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 @keyframes riseUp{0%{transform:translateY(100vh);opacity:0}8%{opacity:0.5}85%{opacity:0.15}100%{transform:translateY(-30px);opacity:0}}
 .hero-content{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;max-width:900px}
 .hero-eyebrow{font-size:9px;font-weight:400;letter-spacing:7px;text-transform:uppercase;color:var(–gold);display:flex;align-items:center;gap:20px;margin-bottom:48px;animation:fadeUp 1s ease 0.2s both}
-.hero-eyebrow::before,.hero-eyebrow::after{content:’’;width:44px;height:1px;background:linear-gradient(to right,transparent,var(–gold))}
+.hero-eyebrow::before,.hero-eyebrow::after{content:;width:44px;height:1px;background:linear-gradient(to right,transparent,var(–gold))}
 .hero-eyebrow::after{background:linear-gradient(to left,transparent,var(–gold))}
 .diamond-wrap{width:100%;display:flex;justify-content:center;align-items:center;margin:0 0 24px 0;position:relative;left:-13px;animation:fadeUp 1s ease 0.05s both;}
 .diamond-svg{width:72px;height:72px;animation:diamondGlow 3s ease-in-out 1s infinite, diamondSpin 6s ease-in-out 1s infinite}
@@ -166,11 +166,11 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 /* ABOUT */
 .about{padding:130px 80px;background:var(–white);display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;max-width:1500px;margin:0 auto}
 .about-img-frame{position:relative}
-.about-img-frame::before{content:’’;position:absolute;top:-20px;left:-20px;right:20px;bottom:20px;border:1px solid var(–border);z-index:0}
+.about-img-frame::before{content:;position:absolute;top:-20px;left:-20px;right:20px;bottom:20px;border:1px solid var(–border);z-index:0}
 .about-img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;display:block;position:relative;z-index:1}
 .about-quote-tag{position:absolute;bottom:-20px;right:-20px;background:var(–gold);color:var(–white);padding:20px 24px;font-family:‘Cormorant Garamond’,serif;font-size:13px;font-style:italic;line-height:1.6;max-width:220px;z-index:2}
 .eyebrow{font-size:8px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(–gold);display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.eyebrow::before{content:’’;width:28px;height:1px;background:var(–gold);flex-shrink:0}
+.eyebrow::before{content:;width:28px;height:1px;background:var(–gold);flex-shrink:0}
 .about-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(48px,5.5vw,76px);font-weight:300;color:var(–black);line-height:1.0;margin-bottom:32px}
 .about-title em{font-style:italic;color:var(–gold)}
 .about-lead{font-family:‘Cormorant Garamond’,serif;font-size:clamp(20px,2.2vw,27px);font-weight:300;font-style:italic;line-height:1.7;color:rgba(13,13,13,0.8);margin-bottom:24px}
@@ -184,7 +184,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 
 /* PHILOSOPHY */
 .philosophy{padding:160px 80px;text-align:center;position:relative;background:var(–white)}
-.philosophy::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,160,74,0.06) 0%,transparent 70%);pointer-events:none}
+.philosophy::before{content:;position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(200,160,74,0.06) 0%,transparent 70%);pointer-events:none}
 .phi-q{font-family:‘Cormorant Garamond’,serif;font-size:clamp(30px,4.5vw,60px);font-weight:300;font-style:italic;color:var(–black);line-height:1.5;max-width:960px;margin:0 auto 32px;position:relative;z-index:1}
 .phi-q em{color:var(–gold);font-style:normal}
 .phi-q::before{content:’“’;font-size:160px;line-height:0;color:var(–gold);opacity:0.1;position:absolute;top:80px;left:-60px;font-style:normal;font-family:‘Cormorant Garamond’,serif}
@@ -200,7 +200,7 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .svc-card{padding:0 0 52px 0;position:relative;overflow:hidden;transition:background 0.4s}
 .svc-card:nth-child(odd){background:var(–white)}
 .svc-card:nth-child(even){background:var(–cream)}
-.svc-card::before{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(–gold),transparent);transform:scaleX(0);transition:transform 0.6s ease}
+.svc-card::before{content:;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(–gold),transparent);transform:scaleX(0);transition:transform 0.6s ease}
 .svc-card:hover::before{transform:scaleX(1)}
 .svc-card:hover{background:rgba(200,160,74,0.06)}
 .svc-photo{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;margin-bottom:36px;display:block}
@@ -215,12 +215,12 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 
 /* ON-CAMERA — standalone highlight section */
 .camera-section{padding:60px 80px;background:var(–black);position:relative;overflow:hidden}
-.camera-section::before{content:’’;position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 60% 50%,rgba(200,160,74,0.08) 0%,transparent 70%);pointer-events:none}
+.camera-section::before{content:;position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 60% 50%,rgba(200,160,74,0.08) 0%,transparent 70%);pointer-events:none}
 .camera-inner{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .camera-img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;display:block}
 .camera-content{padding:20px 0}
 .camera-eyebrow{font-size:8px;font-weight:400;letter-spacing:5px;text-transform:uppercase;color:var(–gold);display:flex;align-items:center;gap:14px;margin-bottom:24px}
-.camera-eyebrow::before{content:’’;width:28px;height:1px;background:var(–gold);flex-shrink:0}
+.camera-eyebrow::before{content:;width:28px;height:1px;background:var(–gold);flex-shrink:0}
 .camera-title{font-family:‘Cormorant Garamond’,serif;font-size:clamp(36px,4vw,60px);font-weight:300;color:var(–white);line-height:1.1;margin-bottom:8px}
 .camera-title em{font-style:italic;color:var(–gold)}
 .camera-uvp{font-size:9px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:var(–gold);margin-bottom:32px;display:block}
@@ -743,7 +743,7 @@ overflow: visible !important;
 <div class="stats">
   <div class="stat"><span class="stat-n">4</span><span class="stat-l" data-i18n="stat-1">Age on stage &middot; Singer &middot; Performer</span></div>
   <div class="stat"><span class="stat-n">22</span><span class="stat-l" data-i18n="stat-2">Years &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span></div>
-  <div class="stat"><span class="stat-n">6</span><span class="stat-l" data-i18n="stat-3">EN &middot; FR &middot; DE &middot; LB &middot; ES &middot; PT</span></div>
+  <div class="stat"><span class="stat-n">6</span><span class="stat-l" data-i18n="stat-3">EN &middot; FR &middot; DE &middot; LB &middot; ES &middot; PT &middot; One voice</span></div>
   <div class="stat"><span class="stat-n">5</span><span class="stat-l" data-i18n="stat-4">Years &middot; European Parliament</span></div>
 </div>
 <div class="divider"></div>
@@ -833,7 +833,7 @@ overflow: visible !important;
             <li>Media interviews &amp; press appearances</li>
             <li>TV &amp; broadcast environments</li>
           </ul>
-          <a href="#camera" class="svc-link" style="font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;opacity:0.7">Learn more &rarr;</a>
+          <a<a href="#camera" class="svc-link" style="font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;opacity:0.7">data-i18n="btn-learn">Learn more &rarr;</a>
         </div>
       </div>
     </div>
@@ -1100,7 +1100,7 @@ var translations = {
     "btn-work":"WORK WITH ME","btn-story":"MY STORY",    "btn-work":"Work with me",
     "btn-story":"My story",
     "btn-book":"Book a session",
-    "btn-learn":"Learn more",
+    "btn-learn":"Learn more →",
     "btn-view-pathways":"View pathways →",
     "btn-view-formats":"View formats →",
     "ws-price-1":"Half day €1,750 · Full day €3,500 excl. VAT",
@@ -1115,7 +1115,7 @@ var translations = {
     "about-body-1":"For 22 years the face of RTL Télé Lëtzebuerg — starting at age 11, anchoring news, hosting shows, presenting live events. Master of Ceremonies for major events across Luxembourg and Europe. Member of the European Parliament 2019–2024.",
     "about-body-2":"Through all of it, I learned something no course teaches: how to hold a room. How to make one person in ten thousand feel spoken to. How to be yourself — completely — in the most exposed moments of your professional life. That is what SHINE gives you.",
     "stat-1":"Age on stage · Singer · Performer","stat-2":"Years · RTL Télé Lëtzebuerg",
-    "stat-3":"EN · FR · DE · LB · ES · PT","stat-4":"Years · European Parliament",
+    "stat-3":"EN · FR · DE · LB · ES · PT · One voice","stat-4":"Years · European Parliament",
     "tl-y-1":"Since 4","tl-y-2":"1995–2018","tl-y-3":"2012–2018","tl-y-4":"2019–2024","tl-y-5":"2026",
     "tl-1":"<strong>Singer &amp; Performer · Luxembourg stages</strong> First album 1992 · First number one 1995",
     "tl-2":"<strong>TV Journalist &amp; Presenter · RTL Télé Lëtzebuerg</strong> Started at age 11 · 22 years as anchor",
@@ -1136,7 +1136,7 @@ var translations = {
             "cam-li-6":"Record · Review · Refine — with honest, professional feedback",
     "cam-li-7":"Available as a standalone session or within any mentoring pathway",
     "cam-note":"No communication coach in Luxembourg brings this level of lived on-camera experience to their clients.",
-    "btn-learn":"Learn more",
+    "btn-learn":"Learn more →",
     "btn-book":"BOOK A SESSION",
     "pw-note-session":"Each session is built entirely around you.",
     "pw-note-diag":"The Diagnosis Session is complimentary.",
@@ -1209,7 +1209,7 @@ var translations = {
     "btn-work":"TRAVAILLONS ENSEMBLE","btn-story":"MON HISTOIRE",    "btn-work":"Travaillons ensemble",
     "btn-story":"Mon histoire",
     "btn-book":"Réserver une séance",
-    "btn-learn":"En savoir plus",
+    "btn-learn":"En savoir plus →",
     "btn-view-pathways":"Voir les parcours →",
     "btn-view-formats":"Voir les formats →",
     "ws-price-1":"Demi-journée 1 750 € · Journée 3 500 € HT",
@@ -1224,7 +1224,7 @@ var translations = {
     "about-body-1":"Pendant 22 ans, le visage de RTL Télé Lëtzebuerg — présentatrice de journaux, d’émissions et d’événements en direct. Maître de cérémonie pour de grands événements au Luxembourg et en Europe. Membre du Parlement européen 2019–2024.",
     "about-body-2":"A travers tout cela, j’ai appris quelque chose qu’aucun cours n’enseigne : comment tenir une salle. Comment faire en sorte qu’une seule personne parmi dix mille se sente concernée. C’est ce que SHINE vous offre.",
     "stat-1":"Âge sur scène · Chanteuse · Artiste","stat-2":"Ans · RTL Télé Lëtzebuerg",
-    "stat-3":"EN · FR · DE · LB · ES · PT","stat-4":"Ans · Parlement européen",
+    "stat-3":"EN · FR · DE · LB · ES · PT · One voice","stat-4":"Ans · Parlement européen",
     "tl-y-1":"Dès 4 ans","tl-y-2":"1995–2018","tl-y-3":"2012–2018","tl-y-4":"2019–2024","tl-y-5":"2026",
     "tl-1":"<strong>Chanteuse &amp; Artiste · Scènes luxembourgeoises</strong> Premier album 1992 · Premier numéro un 1995",
     "tl-2":"<strong>Journaliste &amp; Présentatrice TV · RTL Télé Lëtzebuerg</strong> Début à 11 ans · 22 ans d’antenne",
@@ -1245,7 +1245,7 @@ var translations = {
             "cam-li-6":"Enregistrer · Revoir · Affiner — avec un feedback honnête et professionnel",
     "cam-li-7":"Disponible en séance autonome ou dans tout parcours de mentorat",
     "cam-note":"Aucun coach en communication au Luxembourg n’apporte à ses clients ce niveau d’expérience vécue devant la caméra.",
-    "btn-learn":"En savoir plus",
+    "btn-learn":"En savoir plus →",
     "btn-book":"RÉSERVER UNE SÉANCE",
     "pw-note-session":"Chaque séance est entièrement construite autour de vous.",
     "pw-note-diag":"La Session de Diagnostic est offerte.",
@@ -1318,7 +1318,7 @@ var translations = {
     "btn-work":"MIT MIR ARBEITEN","btn-story":"MEINE GESCHICHTE",    "btn-work":"Mit mir arbeiten",
     "btn-story":"Meine Geschichte",
     "btn-book":"Sitzung buchen",
-    "btn-learn":"Mehr erfahren",
+    "btn-learn":"Mehr erfahren →",
     "btn-view-pathways":"Pfade ansehen →",
     "btn-view-formats":"Formate ansehen →",
     "ws-price-1":"Halbtag 1.750 € · Ganztag 3.500 € zzgl. MwSt.",
@@ -1333,7 +1333,7 @@ var translations = {
     "about-body-1":"22 Jahre lang das Gesicht von RTL Télé Lëtzebuerg — Nachrichtensprecherin, Moderatorin, Live-Eventpräsentatorin. Zeremonienmeisterin für große Events in Luxemburg und Europa. Mitglied des Europäischen Parlaments 2019–2024.",
     "about-body-2":"Durch all das habe ich etwas gelernt, das kein Kurs lehrt: wie man einen Raum hält. Wie man dafür sorgt, dass sich eine Person unter Zehntausenden angesprochen fühlt. Das ist es, was SHINE Ihnen gibt.",
     "stat-1":"Alter auf der Bühne · Sängerin","stat-2":"Jahre · RTL Télé Lëtzebuerg",
-    "stat-3":"EN · FR · DE · LB · ES · PT","stat-4":"Jahre · Europaparlament",
+    "stat-3":"EN · FR · DE · LB · ES · PT · One voice","stat-4":"Jahre · Europaparlament",
     "tl-y-1":"Ab 4 Jahren","tl-y-2":"1995–2018","tl-y-3":"2012–2018","tl-y-4":"2019–2024","tl-y-5":"2026",
     "tl-1":"<strong>Sängerin &amp; Performerin · Luxemburger Bühnen</strong> Erstes Album 1992 · Erste Nummer eins 1995",
     "tl-2":"<strong>TV-Journalistin &amp; Moderatorin · RTL Télé Lëtzebuerg</strong> Beginn mit 11 Jahren · 22 Jahre auf Sendung",
@@ -1354,7 +1354,7 @@ var translations = {
             "cam-li-6":"Aufnehmen · Überprüfen · Verfeinern — mit ehrlichem, professionellem Feedback",
     "cam-li-7":"Als eigenständige Sitzung oder innerhalb eines Mentoring-Pfades verfügbar",
     "cam-note":"Kein Kommunikationscoach in Luxemburg bringt dieses Maß an gelebter Kameraerfahrung zu seinen Klienten.",
-    "btn-learn":"Mehr erfahren",
+    "btn-learn":"Mehr erfahren →",
     "btn-book":"SITZUNG BUCHEN",
     "pw-note-session":"Jede Sitzung ist vollständig auf Sie zugeschnitten.",
     "pw-note-diag":"Die Diagnose-Sitzung ist kostenlos.",
@@ -1427,7 +1427,7 @@ var translations = {
     "btn-work":"TRABALHE COMIGO","btn-story":"A MINHA HISTÓRIA",    "btn-work":"Trabalhe comigo",
     "btn-story":"A minha história",
     "btn-book":"Reservar uma sessão",
-    "btn-learn":"Saber mais",
+    "btn-learn":"Saber mais →",
     "btn-view-pathways":"Ver percursos →",
     "btn-view-formats":"Ver formatos →",
     "ws-price-1":"Meio dia 1.750 € · Dia completo 3.500 € s/ IVA",
@@ -1442,7 +1442,7 @@ var translations = {
     "about-body-1":"Durante 22 anos, o rosto da RTL Télé Lëtzebuerg — a apresentar noticiários, programas e eventos ao vivo. Mestre de cerimónias em grandes eventos no Luxemburgo e na Europa. Membro do Parlamento Europeu 2019–2024.",
     "about-body-2":"Com tudo isso, aprendi algo que nenhum curso ensina: como segurar uma sala. Como fazer uma pessoa em dez mil sentir que está a ser falada diretamente. É isso que o SHINE lhe dá.",
     "stat-1":"Idade em palco · Cantora · Artista","stat-2":"Anos · RTL Télé Lëtzebuerg",
-    "stat-3":"EN · FR · DE · LB · ES · PT","stat-4":"Anos · Parlamento Europeu",
+    "stat-3":"EN · FR · DE · LB · ES · PT · One voice","stat-4":"Anos · Parlamento Europeu",
     "tl-y-1":"Desde os 4","tl-y-2":"1995–2018","tl-y-3":"2012–2018","tl-y-4":"2019–2024","tl-y-5":"2026",
     "tl-1":"<strong>Cantora &amp; Artista · Palcos luxemburgueses</strong> Primeiro álbum 1992 · Primeiro número um 1995",
     "tl-2":"<strong>Jornalista &amp; Apresentadora TV · RTL Télé Lëtzebuerg</strong> Início aos 11 anos · 22 anos de carreira",
@@ -1463,7 +1463,7 @@ var translations = {
             "cam-li-6":"Gravar · Rever · Aperfeiçoar — com feedback honesto e profissional",
     "cam-li-7":"Disponível como sessão autónoma ou dentro de qualquer percurso de mentoria",
     "cam-note":"Nenhum coach de comunicação no Luxemburgo traz este nível de experiência vivida em câmara aos seus clientes.",
-    "btn-learn":"Saber mais",
+    "btn-learn":"Saber mais →",
     "btn-book":"RESERVAR UMA SESSÃO",
     "pw-note-session":"Cada sessão é inteiramente construída à sua volta.",
     "pw-note-diag":"A Sessão de Diagnóstico é gratuita.",
