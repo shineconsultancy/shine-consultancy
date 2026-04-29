@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SHINE Stage Confidence® | Monica Semedo — Executive Communication Coaching Luxembourg</title>
-<meta name="description" content="SHINE Stage Confidence® by Monica Semedo — executive communication coaching, public speaking training and stage presence mentoring in Luxembourg. Individual mentoring and group workshops for leaders, spokespersons and European institutions. Sessions in English, French, German, Luxembourgish and Portuguese.">
+<meta name="description" content="SHINE Stage Confidence® by Monica Semedo — executive communication coaching, public speaking training and stage presence mentoring in Luxembourg. Individual mentoring and group workshops for leaders, spokespersons and European institutions. Sessions in English, French, German, Lëtzebuergesch and Portuguese.">
 <meta name="keywords" content="presentation coaching Luxembourg, public speaking Luxembourg, communication coaching Luxembourg, stage presence Luxembourg, executive coaching Luxembourg, speaking coach Luxembourg, coaching prise de parole Luxembourg, coaching communication Luxembourg, formation communication Luxembourg, présence scénique Luxembourg, coach oratoire Luxembourg, coaching exécutif Luxembourg, Präsentationscoaching Luxemburg, Kommunikationscoaching Luxemburg, Rhetoriktraining Luxemburg, Monica Semedo, SHINE Stage Confidence, SHINE Consultancy, European institutions communication, EU institutions coaching, executive presence, leadership communication, on-camera coaching, media training Luxembourg">
 <meta name="author" content="Monica Semedo">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -743,7 +743,7 @@ overflow: visible !important;
 <div class="stats">
   <div class="stat"><span class="stat-n">4</span><span class="stat-l" data-i18n="stat-1">Age on stage &middot; Singer &middot; Performer</span></div>
   <div class="stat"><span class="stat-n">22</span><span class="stat-l" data-i18n="stat-2">Years &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span></div>
-  <div class="stat"><span class="stat-n">6</span><span class="stat-l" data-i18n="stat-3">EN &middot; FR &middot; DE &middot; LB &middot; ES &middot; PT &middot; One voice</span></div>
+  <div class="stat"><span class="stat-n">6</span><span class="stat-l" data-i18n-stat3="stat-3">6 languages<br><span style="font-size:10px;letter-spacing:1px;">EN &middot; LB &middot; FR &middot; DE &middot; ES &middot; PT</span><br><span style="font-size:10px;letter-spacing:1px;font-style:italic;">One voice</span></span></div>
   <div class="stat"><span class="stat-n">5</span><span class="stat-l" data-i18n="stat-4">Years &middot; European Parliament</span></div>
 </div>
 <div class="divider"></div>
@@ -991,7 +991,7 @@ overflow: visible !important;
 <div class="lang-strip">
   <span class="lang-lbl">Sessions available in</span>
   <div class="lang-items">
-    <span class="lang-item">Luxembourgish</span>
+    <span class="lang-item">Lëtzebuergesch</span>
     <span class="lang-item">Fran&ccedil;ais</span>
     <span class="lang-item">Deutsch</span>
     <span class="lang-item">English</span>
@@ -1608,6 +1608,21 @@ function setLang(lang) {
   if (camTitle && t['cam-title']) {
     var parts = t['cam-title'].split('. ');
     camTitle.innerHTML = parts[0] + '.<br><em style="color:var(--gold);">' + parts[1] + '</em>';
+  }
+
+  // Stat-3 — special two-line handler
+  var stat3el = document.querySelector('[data-i18n-stat3="stat-3"]');
+  if (stat3el) {
+    var stat3texts = {
+      'en': ['6 languages', 'EN · LB · FR · DE · ES · PT', 'One voice'],
+      'fr': ['6 langues', 'EN · LB · FR · DE · ES · PT', 'Une voix'],
+      'de': ['6 Sprachen', 'EN · LB · FR · DE · ES · PT', 'Eine Stimme'],
+      'pt': ['6 línguas', 'EN · LB · FR · DE · ES · PT', 'Uma voz']
+    };
+    if (stat3texts[lang]) {
+      var s = stat3texts[lang];
+      stat3el.innerHTML = s[0] + '<br><span style="font-size:10px;letter-spacing:1px;">' + s[1] + '</span><br><span style="font-size:10px;letter-spacing:1px;font-style:italic;">' + s[2] + '</span>';
+    }
   }
 
   // Form placeholders
