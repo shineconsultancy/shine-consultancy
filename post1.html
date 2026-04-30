@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHINE Post 1 EN</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--gold:#C8A04C;--black:#0d0d0d;}
+html,body{width:100%;height:100%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
+.open-hint{font-family:'Courier New',monospace;font-size:11px;color:#555;letter-spacing:1px;text-align:center;padding:0 20px;}
+.open-hint a{color:var(--gold);text-decoration:none;}
+
+.card{
+width:360px;height:640px;
+background:#fff;
+position:relative;overflow:hidden;
+cursor:pointer;user-select:none;
+}
+
+/* Gold corners — using 4 separate divs so they render everywhere */
+.c{position:absolute;width:44px;height:44px;z-index:10;pointer-events:none;}
+.c::before,.c::after{content:’’;position:absolute;background:var(–gold);opacity:0.55;}
+/* top-left */
+.c-tl{top:22px;left:22px;}
+.c-tl::before{top:0;left:0;width:100%;height:2px;}
+.c-tl::after{top:0;left:0;width:2px;height:100%;}
+/* top-right */
+.c-tr{top:22px;right:22px;}
+.c-tr::before{top:0;right:0;width:100%;height:2px;}
+.c-tr::after{top:0;right:0;width:2px;height:100%;}
+/* bottom-left */
+.c-bl{bottom:22px;left:22px;}
+.c-bl::before{bottom:0;left:0;width:100%;height:2px;}
+.c-bl::after{bottom:0;left:0;width:2px;height:100%;}
+/* bottom-right */
+.c-br{bottom:22px;right:22px;}
+.c-br::before{bottom:0;right:0;width:100%;height:2px;}
+.c-br::after{bottom:0;right:0;width:2px;height:100%;}
+
+.stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:70px 44px;}
+.layer{position:absolute;left:44px;right:44px;text-align:center;opacity:0;}
+
+.brand{position:absolute;bottom:32px;left:0;right:0;text-align:center;opacity:0;}
+.brand-line{width:24px;height:1px;background:var(–gold);margin:0 auto 12px;opacity:0.5;}
+.brand-name{font-family:‘Montserrat’,sans-serif;font-size:7.5px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(–black);display:block;margin-bottom:4px;}
+.brand-url{font-family:‘Montserrat’,sans-serif;font-size:7px;font-weight:300;letter-spacing:2px;color:var(–gold);}
+.hint{position:absolute;bottom:10px;right:14px;font-family:‘Montserrat’,sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(13,13,13,0.15);z-index:20;pointer-events:none;}
+
+.t-floor{font-family:‘Cormorant Garamond’,serif;font-size:64px;font-weight:300;line-height:1.0;color:var(–black);}
+.t-yours{color:var(–gold);font-style:italic;display:inline-block;}
+
+.t-presence{font-family:‘Cormorant Garamond’,serif;font-size:36px;font-weight:300;font-style:italic;color:var(–black);line-height:1.5;}
+.word{display:inline-block;opacity:0;filter:blur(14px);transform:translateY(5px);transition:opacity 0.85s ease,filter 0.85s ease,transform 0.85s ease;}
+.word.on{opacity:1;filter:blur(0);transform:translateY(0);}
+.w-shine{color:var(–gold);font-weight:600;}
+
+.shine-label{font-family:‘Montserrat’,sans-serif;font-size:8px;letter-spacing:5px;text-transform:uppercase;color:rgba(13,13,13,0.35);display:block;margin-bottom:12px;}
+.shine-text{font-family:‘Cormorant Garamond’,serif;font-size:72px;font-weight:600;letter-spacing:10px;color:var(–black);display:inline-block;}
+.shine-by{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-style:italic;font-weight:300;color:var(–gold);margin-top:12px;display:block;letter-spacing:2px;}
+
+@keyframes bIn{from{opacity:0;filter:blur(22px);transform:translateY(10px);}to{opacity:1;filter:blur(0);transform:translateY(0);}}
+@keyframes bOut{from{opacity:1;filter:blur(0);transform:translateY(0);}to{opacity:0;filter:blur(18px);transform:translateY(-6px);}}
+
+/* ONE single beat — slow rise and slow return */
+@keyframes oneBeat{
+0%  {transform:scale(1);}
+35% {transform:scale(1.055);}
+100%{transform:scale(1);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="card" id="card" onclick="replay()">
+  <div class="c c-tl"></div>
+  <div class="c c-tr"></div>
+  <div class="c c-bl"></div>
+  <div class="c c-br"></div>
+  <div class="hint">tap to replay</div>
+  <div class="stage">
+    <div class="layer" id="l0">
+      <div class="t-floor">The Floor Is <span class="t-yours" id="yours">Yours.</span></div>
+    </div>
+    <div class="layer" id="l1">
+      <div class="t-presence">
+        <span class="word" id="w0">Let</span>
+        <span class="word" id="w1">&nbsp;your</span>
+        <span class="word" id="w2">&nbsp;presence</span>
+        <span class="word w-shine" id="w3">&nbsp;shine.</span>
+      </div>
+    </div>
+    <div class="layer" id="l2">
+      <span class="shine-label">Stage Confidence</span>
+      <span class="shine-text" id="st">SHINE</span>
+      <span class="shine-by">by Monica Semedo</span>
+    </div>
+  </div>
+  <div class="brand" id="brand">
+    <div class="brand-line"></div>
+    <span class="brand-name">SHINE Stage Confidence&#174;</span>
+    <span class="brand-url">shine-consultancy.lu</span>
+  </div>
+</div>
+
+<script>
+var busy=false;
+function ms(n){return new Promise(function(r){setTimeout(r,n);});}
+
+function resetAll(){
+  ['l0','l1','l2','brand'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e)return;
+    e.style.animation='none';
+    e.style.transition='none';
+    e.style.opacity='0';
+  });
+  ['w0','w1','w2','w3'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(!e)return;
+    e.style.transition='none';
+    e.classList.remove('on');
+  });
+  ['yours','st'].forEach(function(id){
+    var e=document.getElementById(id);
+    if(e)e.style.animation='none';
+  });
+}
+
+async function beat(el, dur){
+  el.style.animation='none';
+  void el.offsetWidth;
+  el.style.animation='oneBeat '+dur+'s ease forwards';
+  await ms(dur*1000);
+  el.style.animation='none';
+}
+
+async function run(){
+  busy=true;
+  resetAll();
+  await ms(100);
+
+  // L0: The Floor Is Yours.
+  var l0=document.getElementById('l0');
+  l0.style.animation='bIn 1.1s ease forwards';
+  await ms(1400);
+  // Yours — one single slow beat
+  var y=document.getElementById('yours');
+  await beat(y, 1.8);
+  await ms(1400);
+  l0.style.animation='bOut 0.9s ease forwards';
+  await ms(1100);
+
+  // L1: word by word — slow
+  var l1=document.getElementById('l1');
+  l1.style.opacity='1';
+  for(var i=0;i<4;i++){
+    await ms(i===0?100:520);
+    var w=document.getElementById('w'+i);
+    if(w){
+      w.style.transition='opacity 0.9s ease,filter 0.9s ease,transform 0.9s ease';
+      w.classList.add('on');
+    }
+  }
+  await ms(3200);
+  l1.style.transition='opacity 0.9s ease';
+  l1.style.opacity='0';
+  await ms(1100);
+
+  // L2: SHINE blur in
+  var l2=document.getElementById('l2');
+  l2.style.animation='bIn 1.2s ease forwards';
+  await ms(1500);
+
+  // 3 slow single beats on SHINE with pause between
+  var st=document.getElementById('st');
+  for(var p=0;p<3;p++){
+    await beat(st, 2.0);
+    await ms(700);
+  }
+  await ms(400);
+
+  // brand
+  var br=document.getElementById('brand');
+  br.style.transition='opacity 1.2s ease';
+  br.style.opacity='1';
+
+  busy=false;
+}
+
+function replay(){if(!busy)run();}
+window.addEventListener('load',function(){setTimeout(run,700);});
+</script>
+
+</body>
+</html>
