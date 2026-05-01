@@ -139,7 +139,9 @@ function run() {
   after(function(){ anim('shineBig','beat',2200); }, t); t += 3000;
 
   // Brand
-  after(function(){ anim('brand','fadeIn',1200); t = 0; busy = false; }, t);
+  after(function(){ anim('brand','fadeIn',1200); }, t);
+  after(function(){ anim('brand','beat',2200); }, t + 1400);
+  after(function(){ busy = false; }, t + 3800);
 }
 
 function replay() { if (!busy) run(); }
