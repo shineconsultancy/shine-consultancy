@@ -12,31 +12,30 @@
 html,body{width:100%;height:100%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;}
 .card{width:360px;height:640px;background:#fff;position:relative;overflow:hidden;cursor:pointer;user-select:none;}
 .stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:60px 44px;}
-.layer{position:absolute;left:44px;right:44px;text-align:center;opacity:0;}
+.layer{position:absolute;left:44px;right:44px;text-align:center;opacity:0;pointer-events:none;}
 
 .t1{font-family:‘Cormorant Garamond’,serif;font-size:62px;font-weight:300;line-height:1.05;color:var(–black);}
 .t1 em{font-style:italic;}
 
-/* word by word container */
-.words{font-family:‘Cormorant Garamond’,serif;font-size:38px;font-weight:300;font-style:italic;color:var(–black);line-height:1.4;display:flex;flex-wrap:wrap;justify-content:center;gap:0 8px;}
-.w{display:inline-block;opacity:0;filter:blur(16px);transform:translateY(6px);}
-.w.show{opacity:1;filter:blur(0);transform:translateY(0);transition:opacity 0.9s ease,filter 0.9s ease,transform 0.9s ease;}
-.w-shine{color:var(–gold);font-weight:600;font-size:44px;}
+.words{font-family:‘Cormorant Garamond’,serif;font-size:38px;font-weight:300;font-style:italic;color:var(–black);line-height:1.5;display:flex;flex-wrap:wrap;justify-content:center;gap:0 10px;}
+.w{display:inline-block;opacity:0;}
+.w-shine{color:var(–gold);font-weight:600;font-size:46px;}
 
 .t3-big{font-family:‘Cormorant Garamond’,serif;font-size:80px;font-weight:600;letter-spacing:12px;color:var(–black);display:block;line-height:1;}
 .t3-sub{font-family:‘Montserrat’,sans-serif;font-size:11px;font-weight:500;letter-spacing:6px;text-transform:uppercase;color:var(–gold);display:block;margin-top:16px;}
 .t3-by{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-style:italic;font-weight:300;color:var(–gold);margin-top:10px;display:block;}
 
 .brand{position:absolute;bottom:28px;left:0;right:0;text-align:center;opacity:0;}
-.bl{width:24px;height:1px;background:var(–gold);margin:0 auto 10px;opacity:0.5;}
 .bn{font-family:‘Montserrat’,sans-serif;font-size:7.5px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(–black);display:block;margin-bottom:4px;}
-.bu{font-family:‘Montserrat’,sans-serif;font-size:7px;font-weight:300;letter-spacing:2px;color:var(–gold);}
+.bu{font-family:‘Montserrat’,sans-serif;font-size:7px;font-weight:300;letter-spacing:2px;color:var(–gold);display:block;}
 .hint{position:absolute;bottom:8px;right:12px;font-family:‘Montserrat’,sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(13,13,13,0.12);z-index:20;pointer-events:none;}
 
+@keyframes wIn{from{opacity:0;filter:blur(14px);transform:translateY(6px);}to{opacity:1;filter:blur(0);transform:translateY(0);}}
 @keyframes bIn{from{opacity:0;filter:blur(22px);transform:translateY(10px);}to{opacity:1;filter:blur(0);transform:translateY(0);}}
 @keyframes bOut{from{opacity:1;filter:blur(0);transform:translateY(0);}to{opacity:0;filter:blur(18px);transform:translateY(-5px);}}
+@keyframes layerOut{from{opacity:1;}to{opacity:0;}}
 @keyframes beat{0%{transform:scale(1);}35%{transform:scale(1.05);}100%{transform:scale(1);}}
-@keyframes brandIn{from{opacity:0;}to{opacity:1;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 </style>
 
 </head>
@@ -44,136 +43,107 @@ html,body{width:100%;height:100%;background:#1a1a1a;display:flex;align-items:cen
 <div class="card" onclick="replay()">
   <div class="hint">tap to replay</div>
   <div class="stage">
-
-```
-<!-- SCREEN 1 -->
-<div class="layer" id="s1">
-  <div class="t1">The Floor Is <em id="yours">Yours.</em></div>
-</div>
-
-<!-- SCREEN 2 — word by word -->
-<div class="layer" id="s2">
-  <div class="words">
-    <span class="w" id="wLet">Let</span>
-    <span class="w" id="wYour">your</span>
-    <span class="w" id="wPresence">presence</span>
-    <span class="w w-shine" id="wShine">shine.</span>
+    <div class="layer" id="s1">
+      <div class="t1">The Floor Is <em id="yours">Yours.</em></div>
+    </div>
+    <div class="layer" id="s2">
+      <div class="words">
+        <span class="w" id="wLet">Let</span>
+        <span class="w" id="wYour">your</span>
+        <span class="w" id="wPresence">presence</span>
+        <span class="w w-shine" id="wShine">shine.</span>
+      </div>
+    </div>
+    <div class="layer" id="s3">
+      <span class="t3-big" id="shineBig">SHINE</span>
+      <span class="t3-sub">Stage Confidence&#174;</span>
+      <span class="t3-by">by Monica Semedo</span>
+    </div>
   </div>
-</div>
-
-<!-- SCREEN 3 -->
-<div class="layer" id="s3">
-  <span class="t3-big" id="shineBig">SHINE</span>
-  <span class="t3-sub">Stage Confidence&#174;</span>
-  <span class="t3-by">by Monica Semedo</span>
-</div>
-```
-
-  </div>
-
   <div class="brand" id="brand">
-    <div class="bl"></div>
     <span class="bn">SHINE Stage Confidence&#174;</span>
     <span class="bu">shine-consultancy.lu</span>
   </div>
 </div>
 
 <script>
-var busy=false;
-function ms(n){return new Promise(function(r){setTimeout(r,n);});}
+var busy = false;
+var timers = [];
 
-function showLayer(id,dur){
-  var e=document.getElementById(id);
-  e.style.animation='none';void e.offsetWidth;
-  e.style.animation='bIn '+(dur/1000)+'s ease forwards';
-}
-function hideLayer(id,dur){
-  var e=document.getElementById(id);
-  e.style.animation='bOut '+(dur/1000)+'s ease forwards';
-}
-function rst(id){
-  var e=document.getElementById(id);
-  e.style.animation='none';e.style.opacity='0';
-}
-function rstWord(id){
-  var e=document.getElementById(id);
-  e.classList.remove('show');
-  e.style.opacity='0';
-  e.style.filter='blur(16px)';
-  e.style.transform='translateY(6px)';
-  e.style.transition='none';
-}
-function showWord(id){
-  var e=document.getElementById(id);
-  e.classList.add('show');
-}
-async function beat(id,dur){
-  var e=document.getElementById(id);
-  e.style.animation='none';void e.offsetWidth;
-  e.style.animation='beat '+(dur/1000)+'s ease forwards';
-  await ms(dur);e.style.animation='none';
+function clr() { timers.forEach(clearTimeout); timers = []; }
+function after(fn, ms) { var t = setTimeout(fn, ms); timers.push(t); return t; }
+
+function anim(id, kf, dur, fill) {
+  var e = document.getElementById(id);
+  if (!e) return;
+  e.style.animation = kf + ' ' + (dur/1000) + 's ease ' + (fill||'forwards');
 }
 
-async function run(){
-  busy=true;
-
-  // reset everything
-  ['s1','s2','s3','brand'].forEach(rst);
-  ['wLet','wYour','wPresence','wShine'].forEach(rstWord);
-  var y=document.getElementById('yours');
-  y.style.transition='none';y.style.color='';
-
-  await ms(400);
-
-  // ── Screen 1 ─────────────────────────────────
-  showLayer('s1',1100);
-  await ms(1600);
-  y.style.transition='color 1.2s ease';
-  y.style.color='var(--gold)';
-  await ms(900);
-  await beat('yours',2200);
-  await ms(1600);
-  hideLayer('s1',1000);
-  await ms(1200);
-
-  // ── Screen 2: word by word ───────────────────
-  // make layer visible but words still hidden
-  var s2=document.getElementById('s2');
-  s2.style.animation='none';
-  s2.style.opacity='1';
-
-  // reveal each word one by one
-  await ms(200);
-  showWord('wLet');
-  await ms(600);
-  showWord('wYour');
-  await ms(600);
-  showWord('wPresence');
-  await ms(650);
-  showWord('wShine');
-  await ms(3000);
-
-  // blur out whole screen 2
-  hideLayer('s2',1000);
-  await ms(1200);
-
-  // ── Screen 3 ─────────────────────────────────
-  showLayer('s3',1200);
-  await ms(1800);
-  for(var i=0;i<3;i++){
-    await beat('shineBig',2200);
-    await ms(800);
-  }
-  await ms(600);
-
-  var br=document.getElementById('brand');
-  br.style.animation='brandIn 1.2s ease forwards';
-
-  busy=false;
+function rst() {
+  clr();
+  ['s1','s2','s3','brand'].forEach(function(id) {
+    var e = document.getElementById(id);
+    e.style.animation = 'none';
+    e.style.opacity = '0';
+  });
+  ['wLet','wYour','wPresence','wShine'].forEach(function(id) {
+    var e = document.getElementById(id);
+    e.style.animation = 'none';
+    e.style.opacity = '0';
+  });
+  var y = document.getElementById('yours');
+  y.style.animation = 'none';
+  y.style.color = 'var(--black)';
 }
 
-function replay(){if(!busy)run();}
-window.addEventListener('load',function(){setTimeout(run,600);});
+function run() {
+  busy = true;
+  rst();
+
+  var t = 500;
+
+  // Screen 1: The Floor Is Yours.
+  after(function(){ anim('s1','bIn',1100); }, t); t += 1700;
+  // Yours turns gold
+  after(function(){
+    var y = document.getElementById('yours');
+    y.style.transition = 'color 1.2s ease';
+    y.style.color = 'var(--gold)';
+  }, t); t += 1000;
+  // Beat on Yours
+  after(function(){ anim('yours','beat',2200); }, t); t += 2400;
+  // Blur out s1
+  after(function(){ anim('s1','bOut',1000); }, t); t += 1300;
+
+  // Screen 2: word by word — using direct setTimeout per word
+  // Make s2 container visible first
+  after(function(){
+    var s2 = document.getElementById('s2');
+    s2.style.opacity = '1';
+  }, t);
+  // Each word gets animation directly via setTimeout
+  after(function(){ anim('wLet','wIn',900); }, t + 100);
+  after(function(){ anim('wYour','wIn',900); }, t + 750);
+  after(function(){ anim('wPresence','wIn',900); }, t + 1400);
+  after(function(){ anim('wShine','wIn',900); }, t + 2100);
+  t += 2100 + 900 + 3000; // last word fully in + hold
+
+  // Blur out s2
+  after(function(){ anim('s2','bOut',1000); }, t); t += 1300;
+
+  // Screen 3: SHINE
+  after(function(){ anim('s3','bIn',1200); }, t); t += 1900;
+  // 3 beats on SHINE
+  after(function(){ anim('shineBig','beat',2200); }, t); t += 3200;
+  after(function(){ anim('shineBig','beat',2200); }, t); t += 3200;
+  after(function(){ anim('shineBig','beat',2200); }, t); t += 3000;
+
+  // Brand
+  after(function(){ anim('brand','fadeIn',1200); t = 0; busy = false; }, t);
+}
+
+function replay() { if (!busy) run(); }
+window.addEventListener('load', function(){ after(run, 700); });
 </script>
 
 </body>
