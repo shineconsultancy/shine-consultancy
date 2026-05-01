@@ -4,103 +4,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHINE Post 1 EN</title>
+<title>SHINE Post 1</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--gold:#C8A04C;--black:#0d0d0d;}
 html,body{width:100%;height:100%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;}
-
-.card{
-width:360px;height:640px;
-background:#fff;
-position:relative;overflow:hidden;
-cursor:pointer;user-select:none;
-}
-
-/* Gold corners — 4 divs each with 2 lines */
-.c{position:absolute;width:48px;height:48px;z-index:10;pointer-events:none;}
-.c::before,.c::after{content:’’;position:absolute;background:var(–gold);opacity:0.6;}
-.c-tl{top:20px;left:20px;}.c-tl::before{top:0;left:0;width:100%;height:2px;}.c-tl::after{top:0;left:0;width:2px;height:100%;}
-.c-tr{top:20px;right:20px;}.c-tr::before{top:0;right:0;width:100%;height:2px;}.c-tr::after{top:0;right:0;width:2px;height:100%;}
-.c-bl{bottom:20px;left:20px;}.c-bl::before{bottom:0;left:0;width:100%;height:2px;}.c-bl::after{bottom:0;left:0;width:2px;height:100%;}
-.c-br{bottom:20px;right:20px;}.c-br::before{bottom:0;right:0;width:100%;height:2px;}.c-br::after{bottom:0;right:0;width:2px;height:100%;}
-
-.stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:70px 44px;}
+.card{width:360px;height:640px;background:#fff;position:relative;overflow:hidden;cursor:pointer;user-select:none;}
+.stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:60px 44px;}
 .layer{position:absolute;left:44px;right:44px;text-align:center;opacity:0;}
 
+.t1{font-family:‘Cormorant Garamond’,serif;font-size:62px;font-weight:300;line-height:1.05;color:var(–black);}
+.t1 em{font-style:italic;}
+
+/* word by word container */
+.words{font-family:‘Cormorant Garamond’,serif;font-size:38px;font-weight:300;font-style:italic;color:var(–black);line-height:1.4;display:flex;flex-wrap:wrap;justify-content:center;gap:0 8px;}
+.w{display:inline-block;opacity:0;filter:blur(16px);transform:translateY(6px);}
+.w.show{opacity:1;filter:blur(0);transform:translateY(0);transition:opacity 0.9s ease,filter 0.9s ease,transform 0.9s ease;}
+.w-shine{color:var(–gold);font-weight:600;font-size:44px;}
+
+.t3-big{font-family:‘Cormorant Garamond’,serif;font-size:80px;font-weight:600;letter-spacing:12px;color:var(–black);display:block;line-height:1;}
+.t3-sub{font-family:‘Montserrat’,sans-serif;font-size:11px;font-weight:500;letter-spacing:6px;text-transform:uppercase;color:var(–gold);display:block;margin-top:16px;}
+.t3-by{font-family:‘Cormorant Garamond’,serif;font-size:18px;font-style:italic;font-weight:300;color:var(–gold);margin-top:10px;display:block;}
+
 .brand{position:absolute;bottom:28px;left:0;right:0;text-align:center;opacity:0;}
-.brand-line{width:24px;height:1px;background:var(–gold);margin:0 auto 10px;opacity:0.5;}
-.brand-name{font-family:‘Montserrat’,sans-serif;font-size:7.5px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(–black);display:block;margin-bottom:4px;}
-.brand-url{font-family:‘Montserrat’,sans-serif;font-size:7px;font-weight:300;letter-spacing:2px;color:var(–gold);}
+.bl{width:24px;height:1px;background:var(–gold);margin:0 auto 10px;opacity:0.5;}
+.bn{font-family:‘Montserrat’,sans-serif;font-size:7.5px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(–black);display:block;margin-bottom:4px;}
+.bu{font-family:‘Montserrat’,sans-serif;font-size:7px;font-weight:300;letter-spacing:2px;color:var(–gold);}
 .hint{position:absolute;bottom:8px;right:12px;font-family:‘Montserrat’,sans-serif;font-size:7px;letter-spacing:2px;text-transform:uppercase;color:rgba(13,13,13,0.12);z-index:20;pointer-events:none;}
 
-/* L0 — The Floor Is Yours. */
-.t-floor{font-family:‘Cormorant Garamond’,serif;font-size:62px;font-weight:300;line-height:1.0;color:var(–black);}
-.t-yours{color:var(–gold);font-style:italic;display:inline-block;}
-
-/* L1 — Let your presence shine. */
-.t-presence{font-family:‘Cormorant Garamond’,serif;font-size:34px;font-weight:300;font-style:italic;color:var(–black);line-height:1.5;}
-.word{display:inline-block;opacity:0;filter:blur(14px);transform:translateY(5px);transition:opacity 0.85s ease,filter 0.85s ease,transform 0.85s ease;}
-.word.on{opacity:1;filter:blur(0);transform:translateY(0);}
-/* “shine.” transforms to gold and bold */
-.w-shine{color:var(–gold);font-weight:600;font-style:italic;}
-/* Then grows into SHINE */
-.w-shine.growing{
-transition:all 1.4s cubic-bezier(0.22,1,0.36,1);
-font-size:62px;
-letter-spacing:8px;
-opacity:0;
-}
-
-/* L2 — SHINE */
-.shine-label{font-family:‘Montserrat’,sans-serif;font-size:8px;letter-spacing:5px;text-transform:uppercase;color:rgba(13,13,13,0.35);display:block;margin-bottom:12px;}
-.shine-text{font-family:‘Cormorant Garamond’,serif;font-size:72px;font-weight:600;letter-spacing:10px;color:var(–black);display:inline-block;}
-.shine-by{font-family:‘Cormorant Garamond’,serif;font-size:16px;font-style:italic;font-weight:300;color:var(–gold);margin-top:12px;display:block;letter-spacing:2px;}
-
 @keyframes bIn{from{opacity:0;filter:blur(22px);transform:translateY(10px);}to{opacity:1;filter:blur(0);transform:translateY(0);}}
-@keyframes bOut{from{opacity:1;filter:blur(0);transform:translateY(0);}to{opacity:0;filter:blur(18px);transform:translateY(-6px);}}
-@keyframes oneBeat{0%{transform:scale(1);}35%{transform:scale(1.055);}100%{transform:scale(1);}}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes bOut{from{opacity:1;filter:blur(0);transform:translateY(0);}to{opacity:0;filter:blur(18px);transform:translateY(-5px);}}
+@keyframes beat{0%{transform:scale(1);}35%{transform:scale(1.05);}100%{transform:scale(1);}}
+@keyframes brandIn{from{opacity:0;}to{opacity:1;}}
 </style>
 
 </head>
 <body>
-<div class="card" id="card" onclick="replay()">
-  <div class="c c-tl"></div><div class="c c-tr"></div>
-  <div class="c c-bl"></div><div class="c c-br"></div>
+<div class="card" onclick="replay()">
   <div class="hint">tap to replay</div>
   <div class="stage">
 
 ```
-<!-- L0: The Floor Is Yours. -->
-<div class="layer" id="l0">
-  <div class="t-floor">The Floor Is <span class="t-yours" id="yours">Yours.</span></div>
+<!-- SCREEN 1 -->
+<div class="layer" id="s1">
+  <div class="t1">The Floor Is <em id="yours">Yours.</em></div>
 </div>
 
-<!-- L1: Let your presence shine. -->
-<div class="layer" id="l1">
-  <div class="t-presence">
-    <span class="word" id="w0">Let</span>
-    <span class="word" id="w1">&nbsp;your</span>
-    <span class="word" id="w2">&nbsp;presence</span>
-    <span class="word w-shine" id="w3">&nbsp;shine.</span>
+<!-- SCREEN 2 — word by word -->
+<div class="layer" id="s2">
+  <div class="words">
+    <span class="w" id="wLet">Let</span>
+    <span class="w" id="wYour">your</span>
+    <span class="w" id="wPresence">presence</span>
+    <span class="w w-shine" id="wShine">shine.</span>
   </div>
 </div>
 
-<!-- L2: SHINE -->
-<div class="layer" id="l2">
-  <span class="shine-label">Stage Confidence</span>
-  <span class="shine-text" id="st">SHINE</span>
-  <span class="shine-by">by Monica Semedo</span>
+<!-- SCREEN 3 -->
+<div class="layer" id="s3">
+  <span class="t3-big" id="shineBig">SHINE</span>
+  <span class="t3-sub">Stage Confidence&#174;</span>
+  <span class="t3-by">by Monica Semedo</span>
 </div>
 ```
 
   </div>
+
   <div class="brand" id="brand">
-    <div class="brand-line"></div>
-    <span class="brand-name">SHINE Stage Confidence&#174;</span>
-    <span class="brand-url">shine-consultancy.lu</span>
+    <div class="bl"></div>
+    <span class="bn">SHINE Stage Confidence&#174;</span>
+    <span class="bu">shine-consultancy.lu</span>
   </div>
 </div>
 
@@ -108,99 +82,98 @@ opacity:0;
 var busy=false;
 function ms(n){return new Promise(function(r){setTimeout(r,n);});}
 
-function resetAll(){
-  ['l0','l1','l2','brand'].forEach(function(id){
-    var e=document.getElementById(id);
-    if(!e)return;
-    e.style.animation='none';e.style.transition='none';e.style.opacity='0';
-  });
-  ['w0','w1','w2','w3'].forEach(function(id){
-    var e=document.getElementById(id);
-    if(!e)return;
-    e.style.transition='none';e.classList.remove('on');
-    // reset w3 size
-    if(id==='w3'){e.style.fontSize='';e.style.letterSpacing='';e.style.color='';e.style.fontWeight='';}
-  });
-  ['yours','st'].forEach(function(id){
-    var e=document.getElementById(id);
-    if(e)e.style.animation='none';
-  });
+function showLayer(id,dur){
+  var e=document.getElementById(id);
+  e.style.animation='none';void e.offsetWidth;
+  e.style.animation='bIn '+(dur/1000)+'s ease forwards';
 }
-
-async function beat(el,dur){
-  el.style.animation='none';void el.offsetWidth;
-  el.style.animation='oneBeat '+dur+'s ease forwards';
-  await ms(dur*1000);
-  el.style.animation='none';
+function hideLayer(id,dur){
+  var e=document.getElementById(id);
+  e.style.animation='bOut '+(dur/1000)+'s ease forwards';
+}
+function rst(id){
+  var e=document.getElementById(id);
+  e.style.animation='none';e.style.opacity='0';
+}
+function rstWord(id){
+  var e=document.getElementById(id);
+  e.classList.remove('show');
+  e.style.opacity='0';
+  e.style.filter='blur(16px)';
+  e.style.transform='translateY(6px)';
+  e.style.transition='none';
+}
+function showWord(id){
+  var e=document.getElementById(id);
+  e.classList.add('show');
+}
+async function beat(id,dur){
+  var e=document.getElementById(id);
+  e.style.animation='none';void e.offsetWidth;
+  e.style.animation='beat '+(dur/1000)+'s ease forwards';
+  await ms(dur);e.style.animation='none';
 }
 
 async function run(){
   busy=true;
-  resetAll();
-  await ms(100);
 
-  // ── L0: The Floor Is Yours. ──────────────────
-  var l0=document.getElementById('l0');
-  l0.style.animation='bIn 1.1s ease forwards';
-  await ms(1400);
-  // Yours — one slow beat
+  // reset everything
+  ['s1','s2','s3','brand'].forEach(rst);
+  ['wLet','wYour','wPresence','wShine'].forEach(rstWord);
   var y=document.getElementById('yours');
-  await beat(y,1.8);
-  await ms(1400);
-  l0.style.animation='bOut 0.9s ease forwards';
-  await ms(1100);
+  y.style.transition='none';y.style.color='';
 
-  // ── L1: Let your presence shine. — word by word ──
-  var l1=document.getElementById('l1');
-  l1.style.opacity='1';
-  var delays=[100,520,520,620];
-  for(var i=0;i<4;i++){
-    await ms(delays[i]);
-    var w=document.getElementById('w'+i);
-    if(w){
-      w.style.transition='opacity 0.9s ease,filter 0.9s ease,transform 0.9s ease';
-      w.classList.add('on');
-    }
-  }
-  // "shine." fully visible — hold, then it glows gold and grows
+  await ms(400);
+
+  // ── Screen 1 ─────────────────────────────────
+  showLayer('s1',1100);
+  await ms(1600);
+  y.style.transition='color 1.2s ease';
+  y.style.color='var(--gold)';
+  await ms(900);
+  await beat('yours',2200);
+  await ms(1600);
+  hideLayer('s1',1000);
+  await ms(1200);
+
+  // ── Screen 2: word by word ───────────────────
+  // make layer visible but words still hidden
+  var s2=document.getElementById('s2');
+  s2.style.animation='none';
+  s2.style.opacity='1';
+
+  // reveal each word one by one
+  await ms(200);
+  showWord('wLet');
+  await ms(600);
+  showWord('wYour');
+  await ms(600);
+  showWord('wPresence');
+  await ms(650);
+  showWord('wShine');
+  await ms(3000);
+
+  // blur out whole screen 2
+  hideLayer('s2',1000);
+  await ms(1200);
+
+  // ── Screen 3 ─────────────────────────────────
+  showLayer('s3',1200);
   await ms(1800);
-
-  // "shine." pulses gold — gets bigger, bridging to SHINE
-  var w3=document.getElementById('w3');
-  w3.style.transition='all 1.2s cubic-bezier(0.22,1,0.36,1)';
-  w3.style.fontSize='52px';
-  w3.style.letterSpacing='6px';
-  w3.style.color='var(--gold)';
-  w3.style.fontWeight='600';
-  await ms(1000);
-
-  // Fade out l1, fade in l2 simultaneously
-  l1.style.transition='opacity 0.8s ease';
-  l1.style.opacity='0';
-
-  var l2=document.getElementById('l2');
-  await ms(400);
-  l2.style.animation='bIn 1.2s ease forwards';
-  await ms(1500);
-
-  // ── 3 slow single beats on SHINE ─────────────
-  var st=document.getElementById('st');
-  for(var p=0;p<3;p++){
-    await beat(st,2.0);
-    await ms(700);
+  for(var i=0;i<3;i++){
+    await beat('shineBig',2200);
+    await ms(800);
   }
-  await ms(400);
+  await ms(600);
 
-  // Brand
   var br=document.getElementById('brand');
-  br.style.transition='opacity 1.2s ease';
-  br.style.opacity='1';
+  br.style.animation='brandIn 1.2s ease forwards';
 
   busy=false;
 }
 
 function replay(){if(!busy)run();}
-window.addEventListener('load',function(){setTimeout(run,700);});
+window.addEventListener('load',function(){setTimeout(run,600);});
 </script>
 
 </body>
