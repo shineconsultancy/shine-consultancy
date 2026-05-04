@@ -1007,7 +1007,7 @@ overflow: visible !important;
   <div class="contact-inner">
     <h2 class="contact-lead reveal" data-i18n="contact-title" data-en="Ready to truly be heard?" data-fr="Prêt·e à être vraiment entendu·e ?" data-de="Bereit, wirklich gehört zu werden?" data-pt="Pronto·a para ser verdadeiramente ouvido·a?">Ready to <em>truly be heard?</em></h2>
     <p class="contact-body reveal" data-i18n="contact-desc" >Every engagement begins with a free discovery call. No pressure, no template. Just a real conversation about where you are and how SHINE can get you there.</p>
-    <form class="form reveal" onsubmit="handleSubmit(event)">
+    <form class="form reveal" action="https://formspree.io/f/mqenpgey" method="POST" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div><label class="form-label" data-i18n="form-label-firstname">First Name</label><input type="text" placeholder="Your first name" data-i18n-placeholder="form-firstname" required></div>
         <div><label class="form-label" data-i18n="form-label-lastname">Last Name</label><input type="text" placeholder="Your last name" data-i18n-placeholder="form-lastname" required></div>
@@ -1715,11 +1715,29 @@ console.log("SHINE JS: setLang defined =", typeof setLang);
 function handleSubmit(e) {
   e.preventDefault();
   var btn = e.target.querySelector('.btn-submit');
-  btn.textContent = 'Message sent — I will be in touch soon.';
-  btn.style.background = 'var(--gold)';
-  btn.style.borderColor = 'var(--gold)';
-  btn.style.color = 'var(--black)';
-  e.target.reset();
+  var form = e.target;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  var data = new FormData(form);
+  fetch('https://formspree.io/f/mqenpgey', {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(function(response) {
+    if (response.ok) {
+      btn.textContent = 'Message sent — I will be in touch soon.';
+      btn.style.background = 'var(--gold)';
+      btn.style.borderColor = 'var(--gold)';
+      btn.style.color = 'var(--black)';
+      form.reset();
+    } else {
+      btn.textContent = 'Something went wrong — please email hello@shine-consultancy.lu';
+      btn.disabled = false;
+    }
+  }).catch(function() {
+    btn.textContent = 'Something went wrong — please email hello@shine-consultancy.lu';
+    btn.disabled = false;
+  });
 }
 </script>
 
