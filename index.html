@@ -93,13 +93,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:ce
 nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter:blur(20px);border-bottom:1px solid var(–border)}
 .nav-logo{height:52px;width:auto;display:block}
 .nav-links{display:flex;gap:48px;list-style:none}
-.nav-links a{font-size:9px;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:rgba(13,13,13,0.65);text-decoration:none;transition:color 0.3s;position:relative}
+.nav-links a{font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(13,13,13,0.65);text-decoration:none;transition:color 0.3s;position:relative}
 .nav-links a::after{content:’’;position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(–gold);transition:width 0.35s}
 .nav-links a:hover{color:var(–gold)}
 .nav-links a:hover::after{width:100%}
 
 /* HAMBURGER */
 .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:8px;z-index:1001;background:none;border:none}
+#mobileMenu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,41,41,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:40px;}
+#mobileMenu.open{display:flex;}
+#mobileMenu a{font-family:‘Montserrat’,sans-serif;font-size:16px;font-weight:500;letter-spacing:6px;text-transform:uppercase;color:#ffffff;text-decoration:none;}
+#mobileMenu a:hover{color:var(–gold);}
 .hamburger span{width:28px;height:2px;background:var(–black);transition:all 0.3s;display:block;border-radius:1px}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
 .hamburger.open span:nth-child(2){opacity:0}
