@@ -99,12 +99,12 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .nav-links a:hover::after{width:100%}
 
 /* HAMBURGER */
-.hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;padding:8px;z-index:1001;background:none;border:none}
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:10px;z-index:1001;background:none;border:none;outline:none;}
 #mobileMenu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,41,41,0.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:40px;}
 #mobileMenu.open{display:flex;}
 #mobileMenu a{font-family:‘Montserrat’,sans-serif;font-size:16px;font-weight:500;letter-spacing:6px;text-transform:uppercase;color:#ffffff;text-decoration:none;}
 #mobileMenu a:hover{color:var(–gold);}
-.hamburger span{width:28px;height:2px;background:var(–black);transition:all 0.3s;display:block;border-radius:1px}
+.hamburger span{width:28px;height:3px;background:#0d0d0d;transition:all 0.3s;display:block;border-radius:2px;margin:2px 0;}
 .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
