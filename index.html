@@ -80,6 +80,16 @@
     }
   ]
 }
+
+  // Gold underline on service words
+  (function(){
+    var words = document.querySelectorAll('.hero-svc-word');
+    var delays = [800, 1100, 1400];
+    words.forEach(function(w, i){
+      setTimeout(function(){ w.classList.add('active'); }, delays[i]);
+    });
+  })();
+
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -643,7 +653,149 @@ position: relative !important;
 display: inline-block !important;
 overflow: visible !important;
 }
-</style>
+
+    /* HERO SERVICE BLOCK — mobile-first, fat, unmissable */
+    .hero-service-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 6px 12px;
+      margin-bottom: 16px;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-service-word {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(18px, 5vw, 28px);
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: var(--black);
+      text-transform: uppercase;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-service-dot {
+      font-size: clamp(18px, 4vw, 24px);
+      color: var(--gold);
+      font-weight: 900;
+    }
+    .hero-coaching-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(9px, 2.5vw, 12px);
+      font-weight: 600;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      animation: fadeUp 0.6s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      .hero-service-block { gap: 4px 8px; margin-bottom: 12px; }
+      .hero-service-dot { display: none; }
+      .hero-service-word { font-size: clamp(16px, 6vw, 22px); }
+    }
+
+  
+    /* ── HERO REBUILD 14 JUNE ── */
+    .hero-coach-line {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(9px, 2.2vw, 12px);
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: hFadeUp 0.5s ease 0.1s both;
+    }
+    .hero-services {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 28px;
+    }
+    .hero-svc-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-svc-word {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(20px, 5.5vw, 52px);
+      font-weight: 900;
+      letter-spacing: clamp(2px, 0.8vw, 6px);
+      text-transform: uppercase;
+      color: var(--black);
+      opacity: 0;
+      position: relative;
+      display: inline-block;
+    }
+    .hero-svc-word::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.6s ease;
+    }
+    .hero-svc-word.active::after { width: 100%; }
+    .hero-svc-word.w1 { animation: hFadeUp 0.6s ease 0.2s both; }
+    .hero-svc-word.w2 { animation: hFadeUp 0.6s ease 0.5s both; }
+    .hero-svc-word.w3 { animation: hFadeUp 0.6s ease 0.8s both; }
+    .hero-svc-dot {
+      font-size: clamp(16px, 3vw, 28px);
+      color: var(--gold);
+      font-weight: 900;
+      opacity: 0;
+      animation: hFadeUp 0.4s ease 0.35s both;
+    }
+    .hero-svc-dot2 { animation-delay: 0.65s !important; }
+    .hero-floor {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(14px, 3.5vw, 28px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: hFadeUp 0.6s ease 1.0s both;
+    }
+    .hero-presence {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 7vw, 72px);
+      font-weight: 600;
+      color: var(--black);
+      line-height: 1.1;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: hFadeUp 0.7s ease 1.2s both;
+    }
+    .hero-presence em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    @keyframes hFadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 600px) {
+      .hero-svc-dot { display: none; }
+      .hero-svc-word { font-size: clamp(17px, 7vw, 28px); letter-spacing: 2px; }
+      .hero-services { gap: 4px; }
+      .hero-presence { font-size: clamp(24px, 9vw, 48px); margin-bottom: 24px; }
+      .hero-floor { font-size: clamp(13px, 4vw, 20px); }
+    }
+
+  </style>
 
 </head>
 <body>
@@ -689,50 +841,30 @@ overflow: visible !important;
   <div class="p" style="left:72%;animation-duration:19s;animation-delay:7s"></div>
   <div class="p" style="left:90%;animation-duration:14s;animation-delay:3s"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow" data-i18n="hero-eyebrow" data-en="Professional Communication Coaching · Luxembourg" data-fr="Coaching en communication professionnelle · Luxembourg" data-de="Professionelles Kommunikations-Coaching · Luxemburg" data-pt="Coaching de comunicação profissional · Luxemburgo">Professional Communication Coaching · Luxembourg</div>
-    <div class="diamond-wrap">
-      <svg class="diamond-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="dg" cx="50%" cy="40%" r="50%">
-            <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#c8a04a" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="facetL" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#fff8d0" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#c8a04a" stop-opacity="0.1"/>
-          </linearGradient>
-          <linearGradient id="facetR" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#c8a04a" stop-opacity="0.1"/>
-            <stop offset="100%" stop-color="#fff8d0" stop-opacity="0.5"/>
-          </linearGradient>
-        </defs>
-        <polygon points="40,2 78,32 40,78 2,32" stroke="#c8a04a" stroke-width="1.5" fill="none" opacity="0.6"/>
-        <polygon points="40,10 70,32 40,70 10,32" stroke="#e8c96a" stroke-width="0.8" fill="none" opacity="0.7"/>
-        <polygon points="40,2 78,32 40,32" fill="url(#facetL)" opacity="0.6"/>
-        <polygon points="40,2 2,32 40,32" fill="url(#facetR)" opacity="0.4"/>
-        <polygon points="40,32 78,32 40,78" fill="#c8a04a" opacity="0.06"/>
-        <polygon points="40,32 2,32 40,78" fill="#c8a04a" opacity="0.04"/>
-        <ellipse cx="40" cy="28" rx="14" ry="8" fill="url(#dg)" opacity="0.7"/>
-        <line x1="2" y1="32" x2="78" y2="32" stroke="#e8c96a" stroke-width="0.5" opacity="0.35"/>
-        <line x1="40" y1="2" x2="40" y2="78" stroke="#c8a04a" stroke-width="0.4" opacity="0.2"/>
-        <circle cx="40" cy="32" r="4.5" fill="#fff8e0" opacity="0.9"/>
-        <circle cx="40" cy="32" r="10" fill="none" stroke="#e8c96a" stroke-width="0.6" opacity="0.4"/>
-        <circle cx="32" cy="22" r="1.5" fill="#ffffff" opacity="0.8">
-          <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="52" cy="20" r="1" fill="#ffffff" opacity="0.6">
-          <animate attributeName="opacity" values="0.6;0.05;0.6" dur="3.2s" begin="1.2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="58" cy="30" r="0.8" fill="#fff8d0" opacity="0.7">
-          <animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.8s" begin="0.8s" repeatCount="indefinite"/>
-        </circle>
-      </svg>
+
+    <!-- COACH label -->
+    <div class="hero-coach-line">Communication Coach &middot; Luxembourg</div>
+
+    <!-- SERVICE WORDS — fat, animated, gold underline -->
+    <div class="hero-services">
+      <div class="hero-svc-row">
+        <span class="hero-svc-word w1" id="hsw1">Public Speaking</span>
+        <span class="hero-svc-dot">&middot;</span>
+        <span class="hero-svc-word w2" id="hsw2">Stage Presence</span>
+        <span class="hero-svc-dot hero-svc-dot2">&middot;</span>
+        <span class="hero-svc-word w3" id="hsw3">On Camera</span>
+      </div>
     </div>
-    <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.2s">S</span><span class="shine-letter" style="animation-delay:0.5s">H</span><span class="shine-letter" style="animation-delay:0.8s">I</span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.4s">E</span></h1>
+
+    <!-- SHINE title -->
+    <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:1.4s">S</span><span class="shine-letter" style="animation-delay:1.6s">H</span><span class="shine-letter" style="animation-delay:1.8s">I</span><span class="shine-letter" style="animation-delay:2.0s">N</span><span class="shine-letter" style="animation-delay:2.2s">E</span></h1>
+
     <p class="hero-sub"><span style="color:var(--gold);">SHINE Stage Confidence&reg;</span><br>by Monica Semedo</p>
-    <p class="hero-tagline-main" data-i18n="hero-tagline" data-en="Let your presence shine." data-fr="Laissez votre présence briller." data-de="Lassen Sie Ihre Präsenz strahlen." data-pt="Deixe a sua presença brilhar.">Let your presence shine.</p>
-    <p class="hero-tagline-sub" id="taglineSub">Be yourself. <span class="gold-strong">Stronger. More impactful.</span></p>
-    <p style="font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--black);margin-bottom:40px;line-height:1.6;" data-i18n="hero-descriptor">Public Speaking &middot; Meetings &middot; Stage Presence &middot; On Camera</p>
+
+    <!-- TAGLINES — floor is yours + let your presence shine -->
+    <p class="hero-floor">The Floor Is Yours.</p>
+    <p class="hero-presence">Let your presence <em>shine.</em></p>
+
     <div class="hero-cta">
       <a href="#contact" class="btn-black" data-i18n="btn-work">Work with me</a>
       <a href="#about" class="btn-gold-out" data-i18n="btn-story">My story</a>
@@ -744,41 +876,6 @@ overflow: visible !important;
   </div>
 </section>
 
-<!-- STATS -->
-
-<div class="stats">
-  <div class="stat"><span class="stat-n">4</span><span class="stat-l" data-i18n-stat1="stat-1">Age · First on stage<br><span style="font-size:10px;letter-spacing:1px;">Singer · Performer</span></span></div>
-  <div class="stat"><span class="stat-n">22</span><span class="stat-l" data-i18n="stat-2">Years &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span></div>
-  <div class="stat"><span class="stat-n">6</span><span class="stat-l" data-i18n-stat3="stat-3">6 languages<br><span style="font-size:10px;letter-spacing:1px;">EN &middot; LB &middot; FR &middot; DE &middot; ES &middot; PT</span><br><span style="font-size:10px;letter-spacing:1px;font-style:italic;">One voice</span></span></div>
-  <div class="stat"><span class="stat-n">5</span><span class="stat-l" data-i18n="stat-4">Years &middot; European Parliament</span></div>
-</div>
-<div class="divider"></div>
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-  <div style="position:relative;" class="reveal">
-    <div class="about-img-frame">
-      <img class="about-img" src="https://shineconsultancy.github.io/shine-consultancy/Portait.jpg.PNG" alt="Monica Semedo — Executive Communication Coach Luxembourg">
-    </div>
-    <div class="about-quote-tag">&ldquo;The stage is always a performance. SHINE makes sure it is unmistakably yours.&rdquo;</div>
-  </div>
-  <div>
-    <div class="eyebrow reveal" data-i18n="about-eyebrow">The person behind SHINE</div>
-    <h2 class="about-title reveal">Monica<br><em>Semedo</em></h2>
-    <p class="about-lead reveal" data-i18n="about-lead">I have been catching audiences since before I could explain how &mdash; and I have spent a lifetime refining that instinct into something I can now give to others.</p>
-    <p class="about-body reveal" data-i18n="about-body-1">For 22 years the face of RTL T&eacute;l&eacute; L&euml;tzebuerg &mdash; starting at age 11, anchoring news, hosting shows, presenting live events. Master of Ceremonies at the Olympic Games of the Small States of Europe, Ironman 70.3, Philharmonie Luxembourg and major corporate events. Member of the European Parliament 2019&ndash;2024, where I chaired sessions, spoke in plenary and represented Luxembourg on the international stage. Speaker at the FRA Forum Vienna, Reykjavik Global Forum and UN pre-Summit Geneva. Featured on CNN, BBC and Euronews.</p>
-    <p class="about-body reveal" data-i18n="about-body-2"><strong>Through all of it, I learned something no course teaches: how to hold a room not by being louder &mdash; but by being fully, authentically present. That is what I now teach through SHINE Stage Confidence&reg;.</strong></p>
-    <div class="timeline reveal">
-      <div class="tl"><span class="tl-y" data-i18n="tl-y-1">Since 4</span><div class="tl-t" data-i18n="tl-1"><strong>Singer &amp; Performer &middot; Luxembourg stages</strong>First album 1992 &middot; First number one 1995</div></div>
-      <div class="tl"><span class="tl-y" data-i18n="tl-y-2">1996&ndash;2018</span><div class="tl-t" data-i18n="tl-2"><strong>TV Journalist &amp; Presenter &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</strong>Started at age 11 &middot; 22 years as anchor</div></div>
-      <div class="tl"><span class="tl-y" data-i18n="tl-y-3">2012&ndash;2018</span><div class="tl-t" data-i18n="tl-3"><strong>Master of Ceremonies &middot; Major Events</strong>Olympic Games &middot; Ironman &middot; Philharmonie &middot; Mercedes-Benz</div></div>
-      <div class="tl"><span class="tl-y" data-i18n="tl-y-4">2019&ndash;2024</span><div class="tl-t" data-i18n="tl-4"><strong>Member of the European Parliament &middot; Renew Europe</strong>CNN &middot; BBC &middot; Euronews &middot; FRA Vienna &middot; Reykjavik</div></div>
-      <div class="tl"><span class="tl-y" data-i18n="tl-y-5">2026</span><div class="tl-t" data-i18n="tl-5"><strong>Founder &middot; SHINE Consultancy</strong>Stage Confidence&reg; &middot; Luxembourg</div></div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
 
 
 <!-- RTL VIDEO -->
@@ -1784,4 +1881,14 @@ function handleSubmit(e) {
 </script>
 
 </body>
-</html>
+</html<!-- STATS -->
+
+<div class="stats">
+  <div class="stat"><span class="stat-n">22</span><span class="stat-l" data-i18n="stat-2">Years &middot; RTL T&eacute;l&eacute; L&euml;tzebuerg</span></div>
+  <div class="stat"><span class="stat-n">5</span><span class="stat-l" data-i18n="stat-4">Years &middot; European Parliament</span></div>
+  <div class="stat"><span class="stat-n">5</span><span class="stat-l">Languages<br><span style="font-size:10px;letter-spacing:1px;">FR &middot; EN &middot; DE &middot; LB &middot; PT</span></span></div>
+  <div class="stat"><span class="stat-n">41</span><span class="stat-l">Years old &middot;<br><span style="font-size:10px;letter-spacing:1px;">Founded SHINE in 2025</span></span></div>
+</div>
+<div class="divider"></div>
+
+>
