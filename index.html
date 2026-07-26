@@ -80,6 +80,24 @@
     }
   ]
 }
+
+  // Stats scroll animation
+  (function() {
+    var stats = document.querySelectorAll('.stat');
+    if (!stats.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function() {
+            entry.target.classList.add('visible');
+          }, i * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    stats.forEach(function(stat) { observer.observe(stat); });
+  })();
+
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -159,12 +177,12 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .scroll-txt{font-size:7px;letter-spacing:4px;text-transform:uppercase;color:rgba(13,13,13,0.3)}
 
 /* STATS */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:var(–cream);border-top:1px solid var(–border);border-bottom:1px solid var(–border)}
-.stat{padding:52px 32px;text-align:center;border-right:1px solid var(–border);transition:background 0.3s}
-.stat:last-child{border-right:none}
-.stat:hover{background:rgba(200,160,74,0.07)}
-.stat-n{font-family:‘Cormorant Garamond’,serif;font-size:64px;font-weight:300;color:var(–gold);line-height:1;display:block}
-.stat-l{font-size:12px !important;font-weight:400 !important;letter-spacing:2px !important;text-transform:uppercase !important;color:rgba(13,13,13,0.55) !important;display:block !important;margin-top:10px !important;line-height:1.8 !important;}
+
+
+
+
+
+
 .divider{height:1px;background:linear-gradient(to right,transparent,var(–border),transparent)}
 
 /* ABOUT */
@@ -325,9 +343,9 @@ nav.scrolled{padding:14px 24px}
 .hero{padding:110px 28px 90px}
 .hero-eyebrow{font-size:8px;letter-spacing:4px;gap:12px;flex-wrap:wrap;justify-content:center}
 .hero-eyebrow::before,.hero-eyebrow::after{width:24px}
-.stats{grid-template-columns:1fr 1fr}
+
 .stat:nth-child(2){border-right:none}
-.stat{border-bottom:1px solid var(–border)}
+
 .about{grid-template-columns:1fr;padding:72px 24px;gap:52px}
 .about-quote-tag{right:0;bottom:-16px}
 .philosophy{padding:80px 24px}
@@ -696,6 +714,112 @@ overflow: visible !important;
       .hero-presence-tagline { font-size: clamp(15px, 5vw, 26px); margin-bottom: 28px; }
     }
 
+  
+    /* ── STATS — compact, animated ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .stat {
+      padding: 44px 24px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      transition: background 0.3s;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s;
+    }
+    .stat.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: rgba(200,160,74,0.07); }
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .stat-l {
+      font-size: 10px !important;
+      font-weight: 400 !important;
+      letter-spacing: 2px !important;
+      text-transform: uppercase !important;
+      color: rgba(13,13,13,0.5) !important;
+      display: block !important;
+      margin-top: 10px !important;
+      line-height: 1.5 !important;
+    }
+
+    /* MOBILE: single horizontal row, much smaller */
+    @media (max-width: 768px) {
+      .stats {
+        grid-template-columns: repeat(4,1fr);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .stat {
+        padding: 28px 16px;
+        min-width: 80px;
+      }
+      .stat-n {
+        font-size: 32px;
+      }
+      .stat-l {
+        font-size: 8px !important;
+        letter-spacing: 1px !important;
+        margin-top: 6px !important;
+      }
+    }
+
+  
+    @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+        padding: 90px 24px 60px;
+        justify-content: flex-start;
+      }
+      .hero-content {
+        padding-top: 0;
+      }
+    }
+
+    .hero-brand-reg {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(10px, 2vw, 14px);
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: hFadeUp 0.5s ease 1.4s both;
+      line-height: 1.8;
+    }
+
+    .hero-presence-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 4vw, 42px);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--black);
+      margin-bottom: 44px;
+      opacity: 0;
+      animation: hFadeUp 0.6s ease 1.8s both;
+      line-height: 1.2;
+    }
+    .hero-presence-tagline em { color: var(--gold); font-style: italic; }
+    @media (max-width: 768px) {
+      .hero-presence-tagline { font-size: clamp(18px, 6vw, 28px); margin-bottom: 28px; }
+    }
+
   </style>
 
 </head>
@@ -744,11 +868,11 @@ overflow: visible !important;
   <div class="hero-content">
     <div class="hero-services-line">Public Speaking <span>&middot;</span> Stage Presence <span>&middot;</span> On Camera <span>&middot;</span> Coaching</div>
     <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.5s">S</span><span class="shine-letter" style="animation-delay:0.7s">H</span><span class="shine-letter" style="animation-delay:0.9s">I</span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.3s">E</span></h1>
-    <div class="hero-brand-reg">SHINE Stage Confidence<sup>&reg;</sup> &nbsp;&middot;&nbsp; by Monica Semedo</div>
+    <div class="hero-brand-reg">SHINE Stage Confidence<sup>&reg;</sup><br>by Monica Semedo</div>
     <p class="hero-floor-tagline">The Floor Is Yours.</p>
     <p class="hero-presence-tagline">Let your presence <em>shine.</em></p>
     <div class="hero-cta">
-      <a href="#contact" class="btn-black" data-i18n="btn-work">Work with me</a>
+      <a href="#contact" class="btn-black" data-i18n="btn-work">Discover the Pathways</a>
       <a href="#about" class="btn-gold-out" data-i18n="btn-story">My story</a>
     </div>
   </div>
@@ -1392,7 +1516,7 @@ var translations = {
     "ws-note-3":"Der komplette Kommunikationstag · Bis zu 10 Teilnehmer",
     "btn-send":"Senden",
     "about-eyebrow":"Die Person hinter SHINE",
-    "about-lead":"Ich fessle Publikum, seit ich denken kann — und habe ein Leben damit verbracht, diesen Instinkt zu verfeinern, um ihn weiterzugeben.",
+    "about-lead":"Ich fessle das Publikum, seit ich denken kann — und habe ein Leben damit verbracht, diesen Instinkt zu verfeinern, um ihn weiterzugeben.",
     "about-body-1":"22 Jahre lang das Gesicht von RTL Télé Lëtzebuerg — Nachrichtensprecherin, Moderatorin, Live-Eventpräsentatorin. Zeremonienmeisterin für große Events in Luxemburg und Europa. Mitglied des Europäischen Parlaments 2019–2024.",
     "about-body-2":"Durch all das habe ich etwas gelernt, das kein Kurs lehrt: wie man einen Raum hält. Wie man dafür sorgt, dass sich eine Person unter Zehntausenden angesprochen fühlt. Das ist es, was SHINE Ihnen gibt.",
     "stat-1":"Alter bei Bühnenstart · Sängerin · Künstlerin","stat-2":"Jahre · RTL Télé Lëtzebuerg",
@@ -1503,7 +1627,7 @@ var translations = {
     "ws-note-3":"O dia de comunicação completo · Até 10 participantes",
     "btn-send":"Enviar",
     "about-eyebrow":"A pessoa por trás do SHINE",
-    "about-lead":"Capto audiências desde antes de saber como explicar isso — e passei a vida a aperfeçoar esse instinto para o poder transmitir.",
+    "about-lead":"Capto audiências desde antes de saber explicar como — e passei a vida a aperfeiçoar esse instinto para o poder transmitir.",
     "about-body-1":"Durante 22 anos, o rosto da RTL Télé Lëtzebuerg — a apresentar noticiários, programas e eventos ao vivo. Mestre de cerimónias em grandes eventos no Luxemburgo e na Europa. Membro do Parlamento Europeu 2019–2024.",
     "about-body-2":"Com tudo isso, aprendi algo que nenhum curso ensina: como segurar uma sala. Como fazer uma pessoa em dez mil sentir que está a ser falada diretamente. É isso que o SHINE lhe dá.",
     "stat-1":"Idade de estreia · Cantora · Artista","stat-2":"Anos · RTL Télé Lëtzebuerg",
