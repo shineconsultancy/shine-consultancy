@@ -128,8 +128,9 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .hero-eyebrow{font-size:9px;font-weight:400;letter-spacing:7px;text-transform:uppercase;color:var(–gold);display:flex;align-items:center;gap:20px;margin-bottom:48px;animation:fadeUp 1s ease 0.2s both}
 .hero-eyebrow::before,.hero-eyebrow::after{content:’’;width:44px;height:1px;background:linear-gradient(to right,transparent,var(–gold))}
 .hero-eyebrow::after{background:linear-gradient(to left,transparent,var(–gold))}
-.diamond-wrap{width:100%;display:flex;justify-content:center;align-items:center;margin:0 0 24px 0;position:relative;left:-13px;animation:fadeUp 1s ease 0.05s both;}
-.diamond-svg{width:72px;height:72px;animation:diamondGlow 3s ease-in-out 1s infinite, diamondSpin 6s ease-in-out 1s infinite}
+.diamond-wrap{width:100%;display:flex;justify-content:center;align-items:center;margin:0 0 10px 0;position:relative;animation:fadeUp 1s ease 0.05s both;}
+.diamond-svg{width:20px;height:20px;}
+.diamond-svg{width:16px;height:16px;}
 @keyframes diamondGlow{
 0%{filter:drop-shadow(0 0 6px rgba(200,160,74,0.4))}
 25%{filter:drop-shadow(0 0 20px rgba(255,220,100,0.9)) drop-shadow(0 0 40px rgba(200,160,74,0.5))}
@@ -149,6 +150,9 @@ nav.scrolled{background:rgba(255,255,255,0.97);padding:14px 64px;backdrop-filter
 .hero-tagline-sub .word{display:inline-block;}
 .hero-tagline-sub em{color:var(–gold);font-style:normal}
 .hero-cta{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;animation:fadeUp 1s ease 0.95s both}
+.shine-i{position:relative;}
+.i-dot{position:absolute;top:-0.28em;left:50%;transform:translateX(-50%) rotate(45deg);width:0.1em;height:0.1em;background:#14110F;display:block;}
+
 .hero-text-col .hero-title{font-size:clamp(60px,7.5vw,128px) !important;letter-spacing:clamp(4px,1.2vw,14px) !important;white-space:nowrap;}
 .hero-text-col .hero-eyebrow{margin-top:70px;}
 
@@ -723,45 +727,8 @@ overflow: visible !important;
   <div class="hero-text-col">
   <div class="hero-content">
     <div class="hero-eyebrow" data-i18n="hero-eyebrow" data-en="Professional <span class=&quot;coaching-bold&quot;>Coaching</span> · Luxembourg" data-fr="<span class=&quot;coaching-bold&quot;>Coaching</span> professionnel · Luxembourg" data-de="Professionelles <span class=&quot;coaching-bold&quot;>Coaching</span> · Luxemburg" data-pt="<span class=&quot;coaching-bold&quot;>Coaching</span> profissional · Luxemburgo">Professional <span class="coaching-bold">Coaching</span> · Luxembourg</div>
-    <div class="diamond-wrap">
-      <svg class="diamond-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="dg" cx="50%" cy="40%" r="50%">
-            <stop offset="0%" stop-color="#fff8e0" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#c8a04a" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="facetL" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#fff8d0" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#c8a04a" stop-opacity="0.1"/>
-          </linearGradient>
-          <linearGradient id="facetR" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#c8a04a" stop-opacity="0.1"/>
-            <stop offset="100%" stop-color="#fff8d0" stop-opacity="0.5"/>
-          </linearGradient>
-        </defs>
-        <polygon points="40,2 78,32 40,78 2,32" stroke="#c8a04a" stroke-width="1.5" fill="none" opacity="0.6"/>
-        <polygon points="40,10 70,32 40,70 10,32" stroke="#e8c96a" stroke-width="0.8" fill="none" opacity="0.7"/>
-        <polygon points="40,2 78,32 40,32" fill="url(#facetL)" opacity="0.6"/>
-        <polygon points="40,2 2,32 40,32" fill="url(#facetR)" opacity="0.4"/>
-        <polygon points="40,32 78,32 40,78" fill="#c8a04a" opacity="0.06"/>
-        <polygon points="40,32 2,32 40,78" fill="#c8a04a" opacity="0.04"/>
-        <ellipse cx="40" cy="28" rx="14" ry="8" fill="url(#dg)" opacity="0.7"/>
-        <line x1="2" y1="32" x2="78" y2="32" stroke="#e8c96a" stroke-width="0.5" opacity="0.35"/>
-        <line x1="40" y1="2" x2="40" y2="78" stroke="#c8a04a" stroke-width="0.4" opacity="0.2"/>
-        <circle cx="40" cy="32" r="4.5" fill="#fff8e0" opacity="0.9"/>
-        <circle cx="40" cy="32" r="10" fill="none" stroke="#e8c96a" stroke-width="0.6" opacity="0.4"/>
-        <circle cx="32" cy="22" r="1.5" fill="#ffffff" opacity="0.8">
-          <animate attributeName="opacity" values="0.8;0.1;0.8" dur="2.5s" begin="0.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="52" cy="20" r="1" fill="#ffffff" opacity="0.6">
-          <animate attributeName="opacity" values="0.6;0.05;0.6" dur="3.2s" begin="1.2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="58" cy="30" r="0.8" fill="#fff8d0" opacity="0.7">
-          <animate attributeName="opacity" values="0.7;0.1;0.7" dur="2.8s" begin="0.8s" repeatCount="indefinite"/>
-        </circle>
-      </svg>
-    </div>
-    <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.2s">S</span><span class="shine-letter" style="animation-delay:0.5s">H</span><span class="shine-letter" style="animation-delay:0.8s">I</span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.4s">E</span></h1>
+    
+    <h1 class="hero-title" aria-label="SHINE"><span class="shine-letter" style="animation-delay:0.2s">S</span><span class="shine-letter" style="animation-delay:0.5s">H</span><span class="shine-letter shine-i" style="animation-delay:0.8s">I<span class="i-dot"></span></span><span class="shine-letter" style="animation-delay:1.1s">N</span><span class="shine-letter" style="animation-delay:1.4s">E</span></h1>
     <p class="hero-sub"><span style="color:var(--gold);">SHINE Stage Confidence&reg;</span><br>by Monica Semedo</p>
     <p class="hero-tagline-main" data-i18n="hero-tagline" data-en="Let your presence shine." data-fr="Laissez votre présence briller." data-de="Lassen Sie Ihre Präsenz strahlen." data-pt="Deixe a sua presença brilhar.">Let your presence shine.</p>
     <p class="hero-tagline-sub" id="taglineSub">Be yourself. <span class="gold-strong">Stronger. More impactful.</span></p>
